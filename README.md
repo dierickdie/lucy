@@ -5,8 +5,6 @@ A 4x12 plus flanking columns ortho keyboard with USB C, SMD components, and 19mm
 
 This is essentially a dumbed down Planck clone, plus 2 columns. The columns can be snapped off to have just a 4x12.
 
-Although everything should<sup>(tm)</sup> work as is, it hasn't been physically tested.
-
 **USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do, fry your computer, break anything, etc.
 
 ## FAQ:
