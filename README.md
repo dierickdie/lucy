@@ -1,5 +1,5 @@
 # Ori
-![alt text](https://github.com/dierickdie/Ori/blob/master/01%20Ori_PCB.png)
+![alt text](https://github.com/dierickdie/Ori/blob/master/01_Ori_PCB.png)
 
 A 4x12 plus flanking columns ortho keyboard with USB C, SMD components, and 19mm spacing.
 
