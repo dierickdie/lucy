@@ -11,4 +11,5 @@
   (lib (name therick_19mm-rescue)(type Legacy)(uri ${KIPRJMOD}/therick_19mm-rescue.lib)(options "")(descr ""))
   (lib (name therick64BA_19mm-rescue)(type Legacy)(uri ${KIPRJMOD}/therick64BA_19mm-rescue.lib)(options "")(descr ""))
   (lib (name therick64BA-rescue)(type Legacy)(uri ${KIPRJMOD}/therick64BA-rescue.lib)(options "")(descr ""))
+  (lib (name Ori-rescue)(type Legacy)(uri ${KIPRJMOD}/Ori-rescue.lib)(options "")(descr ""))
 )

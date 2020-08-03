@@ -1,4 +1,4 @@
-16519548585167250
+16519533152327250
 acheron_Components
 ACM2012-2P
 
@@ -351,13 +351,6 @@ QMK_small
 0
 Artwork
 rick_large
-
-
-0
-0
-0
-Artwork
-THERICK
 
 
 0
@@ -49750,6 +49743,13 @@ MX100
 2
 Keeb_footprints
 MX100_outline
+
+
+0
+0
+0
+Keeb_footprints
+MX100_slot
 
 
 0

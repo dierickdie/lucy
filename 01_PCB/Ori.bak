@@ -239,9 +239,9 @@ XTAL1
 Text GLabel 5850 7450 0    50   Input ~ 0
 XTAL2
 Text GLabel 3350 7450 2    50   BiDi ~ 0
-D+BUS
+DBUS+
 Text GLabel 3350 7150 2    50   BiDi ~ 0
-D-BUS
+DBUS-
 Text GLabel 8000 6550 2    50   Output ~ 0
 row1
 Text GLabel 5850 7950 0    50   Output ~ 0
@@ -278,13 +278,13 @@ col6
 Text GLabel 8000 6150 2    50   Output ~ 0
 col7
 NoConn ~ 8000 6050
-Text GLabel 5550 9850 2    50   BiDi ~ 0
+Text GLabel 5850 9850 2    50   BiDi ~ 0
 D+
 Text GLabel 5150 9850 0    50   BiDi ~ 0
-D+BUS
+DBUS+
 Text GLabel 5150 8750 0    50   BiDi ~ 0
-D-BUS
-Text GLabel 5550 8750 2    50   BiDi ~ 0
+DBUS-
+Text GLabel 5850 8750 2    50   BiDi ~ 0
 D-
 Wire Wire Line
 	5450 8800 5450 8750
@@ -411,29 +411,25 @@ Wire Wire Line
 $Comp
 L Device:R R3
 U 1 1 5E44C75B
-P 5700 6150
-F 0 "R3" V 5700 6100 28  0000 C CNN
-F 1 "22" V 5700 6200 28  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5630 6150 50  0001 C CNN
-F 3 "~" H 5700 6150 50  0001 C CNN
-	1    5700 6150
+P 5700 9850
+F 0 "R3" V 5700 9800 28  0000 C CNN
+F 1 "22" V 5700 9900 28  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5630 9850 50  0001 C CNN
+F 3 "~" H 5700 9850 50  0001 C CNN
+	1    5700 9850
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R2
 U 1 1 5E4290AE
-P 5700 6050
-F 0 "R2" V 5700 6000 28  0000 C CNN
-F 1 "22" V 5700 6100 28  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5630 6050 50  0001 C CNN
-F 3 "~" H 5700 6050 50  0001 C CNN
-	1    5700 6050
+P 5700 8750
+F 0 "R2" V 5700 8700 28  0000 C CNN
+F 1 "22" V 5700 8800 28  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5630 8750 50  0001 C CNN
+F 3 "~" H 5700 8750 50  0001 C CNN
+	1    5700 8750
 	0    1    1    0   
 $EndComp
-Text GLabel 5550 6150 0    50   BiDi ~ 0
-D+
-Text GLabel 5550 6050 0    50   BiDi ~ 0
-D-
 Text GLabel 8000 6450 2    50   Output ~ 0
 col4
 NoConn ~ 8000 7050
@@ -3582,4 +3578,8 @@ F 3 "~" H 3650 6000 50  0001 C CNN
 	1    3650 6000
 	0    1    1    0   
 $EndComp
+Text GLabel 5850 6150 0    50   BiDi ~ 0
+D+
+Text GLabel 5850 6050 0    50   BiDi ~ 0
+D-
 $EndSCHEMATC

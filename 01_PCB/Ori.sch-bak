@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:Ori-cache
-EELAYER 30 0
+EELAYER 29 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -3420,7 +3420,7 @@ F 3 "" H 8450 9900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Ori-rescue:AVR-ISP-6_mod-Connector J2
+L Connector:AVR-ISP-6_mod J2
 U 1 1 5EC10E7A
 P 7200 9200
 F 0 "J2" V 6783 9250 50  0000 C CNN
@@ -3440,6 +3440,8 @@ Wire Notes Line
 	8050 10100 6450 10100
 Text Notes 6600 10000 0    50   ~ 0
 ISP Flashing
+Text GLabel 7400 9600 3    50   Input ~ 0
+ISP_Reset
 $Comp
 L power:VCC #PWR0125
 U 1 1 5E2877E3
@@ -3464,6 +3466,8 @@ F 3 "" H 6800 9100 50  0001 C CNN
 $EndComp
 Text GLabel 7200 9600 3    50   Input ~ 0
 col12
+Text GLabel 7100 9600 3    50   Input ~ 0
+col10
 Text GLabel 7300 9600 3    50   Input ~ 0
 col11
 $Comp
@@ -3578,8 +3582,4 @@ Text GLabel 5850 6150 0    50   BiDi ~ 0
 D+
 Text GLabel 5850 6050 0    50   BiDi ~ 0
 D-
-Text GLabel 7100 9600 3    50   Input ~ 0
-col10
-Text GLabel 7400 9600 3    50   Input ~ 0
-ISP_Reset
 $EndSCHEMATC
