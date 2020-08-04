@@ -1,7 +1,7 @@
 # Ori
 ![alt text](https://github.com/dierickdie/Ori/blob/master/01_Ori_PCB.png)
 
-An ortho 4x12 plus flanking single columns keyboard with USB C, SMD components, and 19mm spacing.
+An ortho 4x12 plus flanking single columns keyboard with USB C, integrated MCU, and 19mm spacing.
 
 This is essentially a dumbed down Planck clone, plus 2 columns. The columns can be snapped off to have just a 4x12.
 
