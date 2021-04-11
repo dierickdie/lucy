@@ -3,32 +3,32 @@
 // Flash bootloader: avrdude -c avrisp -P /dev/cu.usbmodem123451 -p atmega32u4 -U flash:w:bootloader_atmega32u4_1_0_0.hex:i
  
 // Layers
-#define _BASEWIN        0
-#define _LOWERWIN       1
-#define _RAISEWIN       2
-#define _FUNCTIONWIN    3
-#define _LWL0WIN 		    4
-#define _LWL1WIN		    5
-#define _FUNCTION2WIN   6
+#define _BASE         0
+#define _LOWER        1
+#define _RAISE        2
+#define _FUNCTION     3
+#define _LWL0         4
+#define _LWL1         5
+#define _FUNCTION2    6
 
-#define _BASEMAC        7
-#define _LOWERMAC       8
-#define _RAISEMAC       9
-#define _FUNCTIONMAC    10
-#define _LWL0MAC        11
-#define _LWL1MAC        12
-#define _FUNCTION2MAC   13
+#define _BASEW        7
+#define _LOWERW       8
+#define _RAISEW       9
+#define _FUNCTIONW    10
+#define _LWL0W 		    11
+#define _LWL1W		    12
+#define _FUNCTION2W   13
 
 // Macro keycodes
 enum custom_keycodes {
-  INS_ROW_W = SAFE_RANGE,
-  DEL_ROW_W,
-  INS_COL_W,
-  DEL_COL_W,
-  INS_ROW_M,
-  DEL_ROW_M,
-  INS_COL_M,
-  DEL_COL_M
+  INS_ROW = SAFE_RANGE,
+  DEL_ROW,
+  INS_COL,
+  DEL_COL,
+  INS_ROWW,
+  DEL_ROWW,
+  INS_COLW,
+  DEL_COLW
 };
 
 typedef struct {
@@ -55,7 +55,7 @@ enum {
   RCRLY,
   PIPE,
   // Complex
-  FIRMWARE,
+  FIRM,
   EMAIL,
   SUM,
   LBKTS,
@@ -121,8 +121,8 @@ int hold_cur_dance (qk_tap_dance_state_t *state) {
 }
 
 // For complex tap dances. Put it here so it can be used in any keymap
-void make_firmware_finished (qk_tap_dance_state_t *state, void *user_data);
-void make_firmware_reset (qk_tap_dance_state_t *state, void *user_data);
+void firm_finished (qk_tap_dance_state_t *state, void *user_data);
+void firm_reset (qk_tap_dance_state_t *state, void *user_data);
 
 void email_finished (qk_tap_dance_state_t *state, void *user_data);
 void email_reset (qk_tap_dance_state_t *state, void *user_data);
@@ -143,7 +143,7 @@ void tilde_reset (qk_tap_dance_state_t *state, void *user_data);
 qk_tap_dance_action_t tap_dance_actions[] = {
   [PIPE]      = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, KC_PIPE),
   [EMAIL]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, email_finished, email_reset),
-  [FIRMWARE]  = ACTION_TAP_DANCE_FN_ADVANCED(NULL, make_firmware_finished, make_firmware_reset),
+  [FIRM]      = ACTION_TAP_DANCE_FN_ADVANCED(NULL, firm_finished, firm_reset),
   [SUM]       = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sum_finished, sum_reset),
   [LBKTS]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, lbkts_finished, lbkts_reset),
   [RBKTS]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, rbkts_finished, rbkts_reset),
@@ -154,31 +154,31 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define _______		  KC_TRNS
 
 // Layer codes
-  // Windows
-  #define LOWER_W       MO(_LOWERWIN)
-  #define RAISE_W       MO(_RAISEWIN)
-  #define FUN_W         MO(_FUNCTIONWIN)
-  #define FUN2_W        MO(_FUNCTION2WIN)
-
-  #define LWR_W(kc)     LT(_LOWERWIN, KC_##kc)
-  #define RSE_W(kc)     LT(_RAISEWIN, KC_##kc)
-  #define FN2_W(kc)     LT(_FUNCTION2WIN, KC_##kc)
-  #define FN_W(kc)      LT(_FUNCTIONWIN, KC_##kc)
-  #define LWL0_W(kc)    LT(_LWL0WIN, KC_##kc)
-  #define LWL1_W(kc)    LT(_LWL1WIN, KC_##kc)
-
   // macOS
-  #define LOWER_M       MO(_LOWERMAC)
-  #define RAISE_M       MO(_RAISEMAC)
-  #define FUN_M         MO(_FUNCTIONMAC)
-  #define FUN2_M        MO(_FUNCTION2MAC)
+  #define LOWER         MO(_LOWER) // Momentary Lower macOS layer
+  #define RAISE         MO(_RAISE) // Momenraty raise macOS layer
+  #define FN            MO(_FUNCTION) // Momentary Function macOS layer
+  #define FN2           MO(_FUNCTION2) // momentary Function2 macOS layer
 
-  #define LWR_M(kc)     LT(_LOWERMAC, KC_##kc)
-  #define RSE_M(kc)     LT(_RAISEMAC, KC_##kc)
-  #define FN2_M(kc)     LT(_FUNCTION2MAC, KC_##kc)
-  #define FN_M(kc)      LT(_FUNCTIONMAC, KC_##kc)
-  #define LWL0_M(kc)    LT(_LWL0MAC, KC_##kc)
-  #define LWL1_M(kc)    LT(_LWL1MAC, KC_##kc)
+  #define LWR(kc)       LT(_LOWER, KC_##kc) // Lower macOS layer when held, KC when tapped
+  #define RSE(kc)       LT(_RAISE, KC_##kc) // Raise macOS layer when held, KC when tapped
+  #define FUN(kc)       LT(_FUNCTION, KC_##kc) // Function lmacOS ayer when held, KC when tapped
+  #define FUN2(kc)      LT(_FUNCTION2, KC_##kc) // Function2 macOS layer when held, KC when tapped
+  #define LWL0(kc)      LT(_LWL0, KC_##kc) // LWL0 macOS layer when held, KC when tapped
+  #define LWL1(kc)      LT(_LWL1, KC_##kc) // LWL1 macOS layer when held, KC when tapped
+
+  // Windows
+  #define LOWERW        MO(_LOWERW) // Momentary Lower Windows layer
+  #define RAISEW        MO(_RAISEW) // Momentary Raise Windows layer
+  #define FNW           MO(_FUNCTIONW) // Momentary Function Windows layer
+  #define FN2W          MO(_FUNCTION2W) // Momentary Function2 layer
+
+  #define LWRW(kc)      LT(_LOWERW, KC_##kc) // Lower Windows layer when held, KC when tapped
+  #define RSEW(kc)      LT(_RAISEW, KC_##kc) //  Raise Windows layer when held, KC when tapped
+  #define FUNW(kc)      LT(_FUNCTIONW, KC_##kc) //  Function Windows layer when held, KC when tapped
+  #define FUN2W(kc)     LT(_FUNCTION2W, KC_##kc) //  Function2 Windows layer when held, KC when tapped
+  #define LWL0W(kc)     LT(_LWL0W, KC_##kc) //  LWL0 Windows layer when held, KC when tapped
+  #define LWL1W(kc)     LT(_LWL1W, KC_##kc) //  LWL1 Windows layer when held, KC when tapped
 
 // Dual key codes
   #define CTL(kc)       LCTL_T(KC_##kc) // Control when held, KC when pressed
@@ -187,39 +187,39 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   #define ALT(kc)       LALT_T(KC_##kc) // Alt when held, KC when pressed
 
 // Screenshots
-  // Windows
-  #define PRNTSCR_W     LGUI(LSFT(KC_S))
-
   // macOS
-  #define WHLSCR_M      LGUI(LSFT(KC_3))  // Capture whole screen
-  #define PRNTSCR_M     LGUI(LSFT(KC_4))  // Select screen
-  #define PRNTSCRC_M    LGUI(LSFT(LCTL(KC_4)))  // Select screen copy
+  #define WHLSCR        LGUI(LSFT(KC_3))  // Capture whole screen macOS
+  #define PRNTSCR       LGUI(LSFT(KC_4))  // Select screen macOS
+  #define PRNTSCRC      LGUI(LSFT(LCTL(KC_4)))  // Select screen copy macOS
+
+// Windows
+  #define PRNTSCRW      LGUI(LSFT(KC_S)) // Screen snip Windows
 
 // Chrome Tabs
-  #define TAB_LEFT_W    LCTL(KC_PGDN)
-  #define TAB_RIGHT_W   LCTL(KC_PGUP)
-  #define TAB_LEFT_M    LGUI(LALT(KC_LEFT))  // Go to next tab
-  #define TAB_RIGHT_M   LGUI(LALT(KC_RIGHT))  // Go to previous tab
+  // macOS
+  #define TAB_LEFT      LGUI(LALT(KC_LEFT))  // Tab left macOS
+  #define TAB_RIGHT     LGUI(LALT(KC_RIGHT))  // Tab right macOS
+  
+  // Windows
+  #define TAB_LEFTW     LCTL(KC_PGDN) // Tab left Windows
+  #define TAB_RIGHTW    LCTL(KC_PGUP) // Tab right Windows
 
 // Google Sheets shortcuts
-  // Windows
-  #define SHT_LEFT_W    LALT(KC_UP)  // Go to next sheet in Sheets
-  #define SHT_RIGHT_W   LALT(KC_DOWN)  // Go to previous sheet in Sheets
-
-  #define HIDE_ROW_W    LCTL(LALT(KC_9))  // Hide row
-  #define UNHIDE_ROW_W  LCTL(LSFT(KC_9))  // Unhide row
-  #define HIDE_COL_W    LCTL(LALT(KC_0))  // Hide column
-  #define UNHIDE_COL_W  LCTL(LSFT(KC_0))  // Unhide column
-
   // macOS
-  #define SHT_LEFT_M    LALT(KC_UP)  // Go to next sheet in Sheets
-  #define SHT_RIGHT_M   LALT(KC_DOWN)  // Go to previous sheet in Sheets
-  #define G_HOME_M      LGUI(KC_HOME)  // GUI + Home
+  #define SHT_LEFT      LALT(KC_UP)  // Go to next sheet in Sheets macOS
+  #define SHT_RIGHT     LALT(KC_DOWN)  // Go to previous sheet in Sheets macOS
+  #define HIDE_ROW      LGUI(LALT(KC_9))  // Hide row macOS
+  #define UNHIDE_ROW    LGUI(LSFT(KC_9))  // Unhide row macOS
+  #define HIDE_COL      LGUI(LALT(KC_0))  // Hide column macOS
+  #define UNHIDE_COL    LGUI(LSFT(KC_0))  // Unhide column macOS
 
-  #define HIDE_ROW_M    LGUI(LALT(KC_9))  // Hide row
-  #define UNHIDE_ROW_M  LGUI(LSFT(KC_9))  // Unhide row
-  #define HIDE_COL_M    LGUI(LALT(KC_0))  // Hide column
-  #define UNHIDE_COL_M  LGUI(LSFT(KC_0))  // Unhide column
+  // Windows
+  #define SHT_LEFTW     LALT(KC_UP)  // Go to next sheet in Sheets Windows
+  #define SHT_RIGHTW    LALT(KC_DOWN)  // Go to previous sheet in Sheets Windows
+  #define HIDE_ROWW     LCTL(LALT(KC_9))  // Hide row Windows
+  #define UNHIDE_ROWW   LCTL(LSFT(KC_9))  // Unhide row Windows
+  #define HIDE_COLW     LCTL(LALT(KC_0))  // Hide column Windows
+  #define UNHIDE_COLW   LCTL(LSFT(KC_0))  // Unhide column Windows
 
 // Other
   #define CTL_HOME      LCTL(KC_HOME) // Ctrl + Home
@@ -228,6 +228,134 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 // Begin keymaps
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+// macOS
+/* Base macOS
+  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+  |           |  |    Esc    |     Q     |     W     |     E     |     R     |     T     |     Y     |     U     |     I     |     O     |     P     |    Del    |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |  Fn Tab   |     A     |     S     |     D     |     F     |     G     |     H     |     J     |     K     |     L     |     ;     |     '     |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |   Shift   |     Z     |     X     |     C     |     V     |     B     |     N     |     M     |     ,     |     .     |     /     |   Enter   |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |    GUI    |   Shift   |   Ctrl    |   Option  |  Lwr BS   |  FN2 BS   | FN Space  |  Rse Spc  |   Left    |   Down    |     Up    |   Right   |
+  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+*/ 
+  [_BASE] = LAYOUT_ortho_1x4x12(
+    _______,      KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,
+    _______,      FUN(TAB),   ALT(A),     KC_S,       KC_D,       GUI(F),     KC_G,       KC_H,       GUI(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),
+    _______,      KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),
+    _______,      KC_LGUI,    KC_LSFT,    KC_LCTRL,   KC_LALT,    LWR(BSPC),  FUN2(BSPC), FUN(SPC),   RSE(SPC),   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT
+  ),
+
+/* Lower macOS
+  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+  |           |  |           |   ( [ {   |   ) ] }   |     -     |     =     |    ***    |    ***    |    BS     |     7     |     8     |     9     |     -     |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |   LWL0    |   Home    |   Pg Dn   |   Pg Up   |    End    |           |    F4     |    F2     |     4     |     5     |     6     |     +     |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |   Left    |    Down   |    Up     |   Right   |    ***    |           | Button 1  |     1     |     2     |     3     |   Enter   |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |           |           |           |   Lower   |           |           |   LWL0    |     0     |     *     |     .     |     /     |
+  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+*/
+  [_LOWER] = LAYOUT_ortho_1x4x12(
+    _______,      _______,    TD(LBKTS),  TD(RBKTS),  KC_MINS,    TD(SUM),    KC_NO,      KC_NO,      KC_BSPC,     KC_P7,     KC_P8,      KC_P9,      KC_PMNS,
+    _______,      LWL0(TAB),  GUI(HOME),  KC_PGDN,    KC_PGUP,    LWL1(END),  _______,    KC_F4,      KC_F2,       KC_P4,     KC_P5,      KC_P6,      KC_PPLS,
+    _______,      _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_NO,      _______,    KC_BTN1,     KC_P1,     KC_P2,      KC_P3,      KC_PENT,
+    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    LWL0(SPC),   KC_P0,     KC_PAST,    KC_PDOT,    KC_PSLS
+  ),
+
+    /* LWL0 macOS
+      .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+      |           |  |           |           |           |           |           |           |           |           |    BS     |     /     |     *     |    Del    |
+      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |  |   LWL0    |   GUI     |   Shift   |    Alt    |    Del    |           |           |           |   Left    |   Down    |     Up    |   Right   |
+      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |  |           |           |           |           |           |           |           |           |   Home    |   Pg Dn   |   Pg Up   |    End    |
+      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |  |           |           |           |           |   Lower   |           |  TG(Lwr)  |   LWL0    |           |           |           |           |
+      '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    */
+
+      [_LWL0] = LAYOUT_ortho_1x4x12(
+        _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_BSPC,    KC_PSLS,    KC_PAST,    KC_DEL,
+        _______,      _______,    KC_LGUI,    KC_LSFT,    KC_LALT,    KC_DEL,     _______,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,
+        _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,
+        _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(1),	    _______,    _______,    _______,    _______,    _______
+      ),
+
+    /* LWL1 macOS
+      .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+      |           |  |   RESET   |           |           |           |           |           |           |           |           |           |           |           |
+      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |  |           | GUI+Home  | Prt Sel C | Prnt Sel  |   LWL1    |           |           |           |     $     |     ,     |     %     |           |
+      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |  | Caps Lock | Prnt Scr  |           |           |           |           |           |           |     !     |           |           |           |
+      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+      |           |  | Windows   |           |           |           |           |           |           |           |           |           |  NumLock  |           |
+      '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+    */
+      [_LWL1] = LAYOUT_ortho_1x4x12(
+        _______,      RESET,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,      _______,    GUI_HOME,   PRNTSCRC,   PRNTSCR,    _______,    _______,    _______,    _______,    KC_DLR,     KC_COMM,    KC_PERC,    _______,
+        _______,      KC_CAPS,    WHLSCR,     _______,    _______,    _______,    _______,    _______,    _______,    KC_EXLM,    _______,    _______,    _______,
+        _______,      TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NLCK,    _______
+      ),
+
+/* Raise macOS
+  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+  |           |  |    ` ~    |     1     |     2     |     3     |     4     |     5     |     6     |     7     |     8     |     9     |     0     |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |     !     |     @     |     #     |     $     |     %     |     ^     |     &     |     *     |     (     |     )     |     _     |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |           |           |           |           |           |           |           |     [     |     ]     |    \ |    |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |           |           |           |           |           |  TG(Lwr)  |   Raise   |   Play    |   Vol-    |   Vol+    |   Mute    |
+  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+*/
+  [_RAISE] = LAYOUT_ortho_1x4x12(
+    _______,      TD(TILDE),  KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       _______,
+    _______,      _______,    KC_EXLM,    TD(EMAIL),  KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_UNDS,
+    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_LBRC,    KC_RBRC,    TD(PIPE),   _______,
+    _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(1),      _______,    KC_MPLY,    KC_VOLD,    KC_VOLU,    KC_MUTE
+  ),
+
+/* FN macOS
+  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+  |           |  |           |    F1     |    F2     |    F3     |    F4     |    F5     |    F6     |    F7     |    F8     |    F9     |   F10     |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |    Fn     |    GUI    |   Shift   |  Option   |    Del    |           |           |   Left    |    Down   |    Up     |   Right   |   Enter   |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |           |           |           | Firmware  |           |           |   Home    |   Pg Dn   |   Pg Up   |    End    |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |           |           |           |   Enter   |           |           |           |           |           |   F11     |    F12    |
+  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+*/
+  [_FUNCTION] = LAYOUT_ortho_1x4x12(
+    _______,      _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
+    _______,      _______,    KC_LGUI,    KC_LSFT,    KC_LALT,    KC_DEL,     _______,    _______,    CTL(LEFT),  KC_DOWN,    KC_UP,      CTL(RIGHT), KC_ENT,
+    _______,      _______,    _______,    _______,    _______,    TD(FIRM),   _______,   _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,
+    _______,      _______,    _______,    _______,    _______,    KC_ENT,     _______,    _______,    _______,    _______,    _______,    KC_F11,     KC_F12 
+  ),
+
+/* FN2 macOS
+  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
+  |           |  |     ~     |  Tab Left | Tab Right | Sht Left  | Sht Right |           |           |           |           |           |           |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |  Del Col  |  Ins Col  |  Del Row  |  Ins Row  |           |           |           |           |           |           |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |  Hide Col | Unhide Col|  Hide Row | Unhide Row|           |           |           |           |           |           |           |
+  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
+  |           |  |           |           |           |           |           |           |           |           |           |           |           |           |
+  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
+*/ 
+  [_FUNCTION2] = LAYOUT_ortho_1x4x12(
+    _______,      KC_GRAVE,   TAB_LEFT,   TAB_RIGHT,  SHT_LEFT,   SHT_RIGHT,  _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,      _______,    DEL_COL,    INS_COL,    DEL_ROW,    INS_ROW,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,      _______,    HIDE_COL,   UNHIDE_COL, HIDE_ROW,   UNHIDE_ROW, _______,   _______,    _______,    _______,    _______,    _______,    _______,
+    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ 
+  ) ,
 
 // Windows
 /* Base Windows
@@ -241,11 +369,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |           |  |    Ctrl   |   Shift   |    GUI    |    Alt    |  Lwr BS   |  FUN2 BS  |   Space   |  Rse Spc  |   Left    |   Down    |     Up    |   Right   |
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */
-  [_BASEWIN] = LAYOUT_ortho_1x4x12(
+  [_BASEW] = LAYOUT_ortho_1x4x12(
     KC_MPLY,      KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,
-    _______,      FN_W(TAB),  KC_A,       KC_S,       KC_D,       CTL(F),     KC_G,       KC_H,       CTL(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),
+    _______,      FUNW(TAB),  KC_A,       KC_S,       KC_D,       CTL(F),     KC_G,       KC_H,       CTL(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),
     _______,      KC_LSFT,    CTL(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),
-    _______,      KC_LCTL,    KC_LSFT,    KC_LGUI,    KC_LALT,    LWR_W(BSPC),FN2_W(BSPC),FN_W(SPC),  RSE_W(SPC), KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT
+    _______,      KC_LCTL,    KC_LSFT,    KC_LGUI,    KC_LALT,    LWRW(BSPC), FUN2W(BSPC),FUNW(SPC),  RSEW(SPC),  KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT
   ),
 
 /* Lower Windows
@@ -259,11 +387,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |           |  |           |           |           |           |   Lower   |           |           |   LWL0    |     0     |     .     |     *     |     /     |
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */
-  [_LOWERWIN] = LAYOUT_ortho_1x4x12(
+  [_LOWERW] = LAYOUT_ortho_1x4x12(
     _______,      _______,    TD(LBKTS),  TD(RBKTS),  KC_MINS,    TD(SUM),    KC_NO,      KC_NO,      KC_BSPC,     KC_P7,     KC_P8,      KC_P9,      KC_PMNS,
-    _______,      LWL0_W(TAB),CTL(HOME),  KC_PGDN,    KC_PGUP,    LWL1_W(END),KC_BSPC,    KC_F4,      KC_F2,       KC_P4,     KC_P5,      KC_P6,      KC_PPLS,
+    _______,      LWL0W(TAB), CTL(HOME),  KC_PGDN,    KC_PGUP,    LWL1W(END), KC_BSPC,    KC_F4,      KC_F2,       KC_P4,     KC_P5,      KC_P6,      KC_PPLS,
     _______,      _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_NO,      _______,    KC_CALC,     KC_P1,     KC_P2,      KC_P3,      KC_PENT,
-    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    LWL0_W(SPC), KC_P0,     KC_PAST,    KC_PDOT,    KC_PSLS
+    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    LWL0W(SPC),  KC_P0,     KC_PAST,    KC_PDOT,    KC_PSLS
   ),
 
     /* LWL0 Windows
@@ -277,11 +405,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       |           |  |           |           |           |           |           |           |  TG(Lwr)  |   LWL0    |           |           |           |   LWL1    |
       '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
     */
-      [_LWL0WIN] = LAYOUT_ortho_1x4x12(
+      [_LWL0W] = LAYOUT_ortho_1x4x12(
         _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_BSPC,    KC_PSLS,    KC_PAST,    KC_DEL,
         _______,      _______,    KC_LCTL,    KC_LSFT,    KC_DEL,     KC_DEL,     _______,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,
         _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,
-        _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(1),	    _______,    _______,    _______,    _______,    _______
+        _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(8),	    _______,    _______,    _______,    _______,    _______
       ),
     
     /* LWL1 Windows
@@ -295,9 +423,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       |           |  |   macOS   |           |           |           |           |           |           |           |           |           |  NumLock  |           |
       '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
     */
-      [_LWL1WIN] = LAYOUT_ortho_1x4x12(
+      [_LWL1W] = LAYOUT_ortho_1x4x12(
         _______,      RESET,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-        _______,      _______,    CTL_HOME,   PRNTSCR_W,  _______,    _______,    _______,    _______,    _______,    KC_DLR,     KC_COMM,    KC_PERC,    _______,
+        _______,      _______,    CTL_HOME,   PRNTSCRW,   _______,    _______,    _______,    _______,    _______,    KC_DLR,     KC_COMM,    KC_PERC,    _______,
         _______,      KC_CAPS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EXLM,    _______,    _______,    _______,
         _______,      TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NLCK,    _______
       ),
@@ -313,11 +441,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |           |  |           |           |           |           |           |           |  TG(Lwr)  |   Raise   |   Play    |   Vol-    |   Vol+    |   Mute    |
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */
-  [_RAISEWIN] = LAYOUT_ortho_1x4x12(
+  [_RAISEW] = LAYOUT_ortho_1x4x12(
     _______,      TD(TILDE),  KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       _______,
     _______,      _______,    KC_EXLM,    TD(EMAIL),  KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_UNDS,
     _______,      _______,    _______,    _______,    _______,    _______,    _______,    KC_INS,     _______,    KC_LBRC,    KC_RBRC,    TD(PIPE),   _______,
-    _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(1),      _______,    KC_MPLY,    KC_VOLD,    KC_VOLU,    KC_MUTE
+    _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(8),      _______,    KC_MPLY,    KC_VOLD,    KC_VOLU,    KC_MUTE
   ),
 
 /* FN Windows
@@ -331,10 +459,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |           |  |           |           |           |           |   Enter   |           |           |           |           |           |   F11     |    F12    |
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */
-  [_FUNCTIONWIN] = LAYOUT_ortho_1x4x12(
+  [_FUNCTIONW] = LAYOUT_ortho_1x4x12(
     _______,      _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
     _______,      _______,    KC_LCTL,    KC_LSFT,    KC_DEL,     KC_DEL,     _______,    _______,    ALT(LEFT),  KC_DOWN,    KC_UP,      ALT(RIGHT), KC_ENT,
-    _______,      _______,    _______,    _______,    _______,    TD(FIRMWARE),_______,    _______,    CTL(HOME),  SFT(PGDN),  SFT(PGUP),  CTL(END),   _______,
+    _______,      _______,    _______,    _______,    _______,    TD(FIRM),   _______,    _______,    CTL(HOME),  SFT(PGDN),  SFT(PGUP),  CTL(END),   _______,
     _______,      _______,    _______,    _______,    _______,    KC_ENT,     _______,    _______,    _______,    _______,    _______,    KC_F11,     KC_F12 
   ),
 
@@ -349,145 +477,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |           |  |           |           |           |           |           |           |           |           |           |           |           |           |
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */ 
-  [_FUNCTION2WIN] = LAYOUT_ortho_1x4x12(
-    _______,      _______,    TAB_LEFT_W, TAB_RIGHT_W,SHT_LEFT_W, SHT_RIGHT_W,_______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,      _______,    DEL_COL_W,  INS_COL_W,  DEL_ROW_W,  INS_ROW_W,  _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,      _______,    HIDE_COL_W, UNHIDE_COL_W,HIDE_ROW_W,UNHIDE_ROW_W,_______,   _______,    _______,    _______,    _______,    _______,    _______,
+  [_FUNCTION2W] = LAYOUT_ortho_1x4x12(
+    _______,      _______,    TAB_LEFTW,  TAB_RIGHTW, SHT_LEFTW,  SHT_RIGHTW, _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,      _______,    DEL_COLW,   INS_COLW,   DEL_ROWW,   INS_ROWW,   _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,      _______,    HIDE_COLW,  UNHIDE_COLW,HIDE_ROWW,  UNHIDE_ROWW,_______,   _______,    _______,    _______,    _______,    _______,    _______,
     _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ 
-  ),
-
-// macOS
-
-/* Base macOS
-  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |           |  |    Esc    |     Q     |     W     |     E     |     R     |     T     |     Y     |     U     |     I     |     O     |     P     |    Del    |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |  Fn Tab   |     A     |     S     |     D     |     F     |     G     |     H     |     J     |     K     |     L     |     ;     |     '     |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |   Shift   |     Z     |     X     |     C     |     V     |     B     |     N     |     M     |     ,     |     .     |     /     |   Enter   |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |    GUI    |   Shift   |   Ctrl    |   Option  |  Lwr BS   |  FN2 BS   | FN Space  |  Rse Spc  |   Left    |   Down    |     Up    |   Right   |
-  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-*/ 
-  [_BASEMAC] = LAYOUT_ortho_1x4x12(
-    _______,      KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,
-    _______,      FN_M(TAB),  ALT(A),     KC_S,       KC_D,       GUI(F),     KC_G,       KC_H,       GUI(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),
-    _______,      KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),
-    _______,      KC_LGUI,    KC_LSFT,    KC_LCTRL,   KC_LALT,    LWR_M(BSPC),FN2_M(BSPC),FN_M(SPC),  RSE_M(SPC), KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT
-  ),
-
-/* Lower macOS
-  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |           |  |           |   ( [ {   |   ) ] }   |     -     |     =     |    ***    |    ***    |    BS     |     7     |     8     |     9     |     -     |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |   LWL0    |   Home    |   Pg Dn   |   Pg Up   |    End    |           |    F4     |    F2     |     4     |     5     |     6     |     +     |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |   Left    |    Down   |    Up     |   Right   |    ***    |           | Button 1  |     1     |     2     |     3     |   Enter   |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |           |           |           |   Lower   |           |           |   LWL0    |     0     |     *     |     .     |     /     |
-  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-*/
-  [_LOWERMAC] = LAYOUT_ortho_1x4x12(
-    _______,      _______,    TD(LBKTS),  TD(RBKTS),  KC_MINS,    TD(SUM),    KC_NO,      KC_NO,      KC_BSPC,     KC_P7,     KC_P8,      KC_P9,      KC_PMNS,
-    _______,      LWL0_M(TAB),GUI(HOME),  KC_PGDN,    KC_PGUP,    LWL1_M(END),_______,    KC_F4,      KC_F2,       KC_P4,     KC_P5,      KC_P6,      KC_PPLS,
-    _______,      _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_NO,      _______,    KC_BTN1,     KC_P1,     KC_P2,      KC_P3,      KC_PENT,
-    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    LWL0_M(SPC), KC_P0,     KC_PAST,    KC_PDOT,    KC_PSLS
-  ),
-
-    /* LWL0 macOS
-      .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-      |           |  |           |           |           |           |           |           |           |           |    BS     |     /     |     *     |    Del    |
-      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-      |           |  |   LWL0    |   GUI     |   Shift   |    Alt    |    Del    |           |           |           |   Left    |   Down    |     Up    |   Right   |
-      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-      |           |  |           |           |           |           |           |           |           |           |   Home    |   Pg Dn   |   Pg Up   |    End    |
-      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-      |           |  |           |           |           |           |   Lower   |           |  TG(Lwr)  |   LWL0    |           |           |           |           |
-      '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-    */
-
-      [_LWL0MAC] = LAYOUT_ortho_1x4x12(
-        _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_BSPC,    KC_PSLS,    KC_PAST,    KC_DEL,
-        _______,      _______,    KC_LGUI,    KC_LSFT,    KC_LALT,    KC_DEL,     _______,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,
-        _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,
-        _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(8),	    _______,    _______,    _______,    _______,    _______
-      ),
-
-    /* LWL1 macOS
-      .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-      |           |  |   RESET   |           |           |           |           |           |           |           |           |           |           |           |
-      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-      |           |  |           | GUI+Home  | Prt Sel C | Prnt Sel  |   LWL1    |           |           |           |     $     |     ,     |     %     |           |
-      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-      |           |  | Caps Lock | Prnt Scr  |           |           |           |           |           |           |     !     |           |           |           |
-      |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-      |           |  | Windows   |           |           |           |           |           |           |           |           |           |  NumLock  |           |
-      '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-    */
-      [_LWL1MAC] = LAYOUT_ortho_1x4x12(
-        _______,      RESET,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-        _______,      _______,    GUI_HOME,   PRNTSCRC_M, PRNTSCR_M,  _______,    _______,    _______,    _______,    KC_DLR,     KC_COMM,    KC_PERC,    _______,
-        _______,      KC_CAPS,    WHLSCR_M,   _______,    _______,    _______,    _______,    _______,    _______,    KC_EXLM,    _______,    _______,    _______,
-        _______,      TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NLCK,    _______
-      ),
-
-/* Raise macOS
-  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |           |  |    ` ~    |     1     |     2     |     3     |     4     |     5     |     6     |     7     |     8     |     9     |     0     |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |     !     |     @     |     #     |     $     |     %     |     ^     |     &     |     *     |     (     |     )     |     _     |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |           |           |           |           |           |           |           |     [     |     ]     |    \ |    |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |           |           |           |           |           |  TG(Lwr)  |   Raise   |   Play    |   Vol-    |   Vol+    |   Mute    |
-  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-*/
-  [_RAISEMAC] = LAYOUT_ortho_1x4x12(
-    _______,      TD(TILDE),  KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       _______,
-    _______,      _______,    KC_EXLM,    TD(EMAIL),  KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_UNDS,
-    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_LBRC,    KC_RBRC,    TD(PIPE),   _______,
-    _______,      _______,    _______,    _______,    _______,    _______,    _______,    TG(8),      _______,    KC_MPLY,    KC_VOLD,    KC_VOLU,    KC_MUTE
-  ),
-
-/* FN macOS
-  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |           |  |           |    F1     |    F2     |    F3     |    F4     |    F5     |    F6     |    F7     |    F8     |    F9     |   F10     |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |    Fn     |    GUI    |   Shift   |  Option   |    Del    |           |           |   Left    |    Down   |    Up     |   Right   |   Enter   |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |           |           |           | Firmware  |           |           |   Home    |   Pg Dn   |   Pg Up   |    End    |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |           |           |           |   Enter   |           |           |           |           |           |   F11     |    F12    |
-  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-*/
-  [_FUNCTIONMAC] = LAYOUT_ortho_1x4x12(
-    _______,      _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,
-    _______,      _______,    KC_LGUI,    KC_LSFT,    KC_LALT,    KC_DEL,     _______,    _______,    CTL(LEFT),  KC_DOWN,    KC_UP,      CTL(RIGHT), KC_ENT,
-    _______,      _______,    _______,    _______,    _______,    TD(FIRMWARE),_______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,
-    _______,      _______,    _______,    _______,    _______,    KC_ENT,     _______,    _______,    _______,    _______,    _______,    KC_F11,     KC_F12 
-  ),
-
-/* FN2 macOS
-  .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |           |  |     ~     |  Tab Left | Tab Right | Sht Left  | Sht Right |           |           |           |           |           |           |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |  Del Col  |  Ins Col  |  Del Row  |  Ins Row  |           |           |           |           |           |           |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |  Hide Col | Unhide Col|  Hide Row | Unhide Row|           |           |           |           |           |           |           |
-  |-----------|  |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|
-  |           |  |           |           |           |           |           |           |           |           |           |           |           |           |
-  '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
-*/ 
-  [_FUNCTION2MAC] = LAYOUT_ortho_1x4x12(
-    _______,      KC_GRAVE,   TAB_LEFT_M, TAB_RIGHT_M,SHT_LEFT_M, SHT_RIGHT_M,_______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,      _______,    DEL_COL_M,  INS_COL_M,  DEL_ROW_M,  INS_ROW_M,  _______,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,      _______,    HIDE_COL_M, UNHIDE_COL_M,HIDE_ROW_M,UNHIDE_ROW_M,_______,   _______,    _______,    _______,    _______,    _______,    _______,
-    _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______ 
-  ) 
+  )
 
 };
 
-const uint16_t PROGMEM fn_actions[] = {
+const uint16_t PROGMEM maactions[] = {
 
 };
 
@@ -505,63 +504,64 @@ const uint16_t PROGMEM fn_actions[] = {
 // Macros
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // Windows
-    case INS_ROW_W: // Insert row in Sheets
-      if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LALT(SS_LSFT("i") SS_DELAY(250)) "r"); // Alt+Shift+i, r
-      } else { // when keycode is released
-      }
-      break;
-
-    case DEL_ROW_W: // Delete row in Sheets
-      if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LALT(SS_LSFT("e") SS_DELAY(250)) "d"); // Alt+Shift+e, d
-      } else { // when keycode is released
-      }
-      break;
-
-    case INS_COL_W: // Insert column in Sheets
-      if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LALT(SS_LSFT("i") SS_DELAY(250)) "c"); // Alt+Shift+i, c
-      } else { // when keycode is released
-      }
-      break;    
-
-    case DEL_COL_W: // zDelete column in Sheets
-      if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LALT(SS_LSFT("e") SS_DELAY(250)) "e"); // Alt+Shift+e, e
-      } else { // when keycode is released
-      }
-      break;
-
     // macOS
-    case INS_ROW_M: // Insert row in Sheets
+    case INS_ROW: // Insert row in Sheets
       if (record->event.pressed) { // when keycode is pressed
         SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "r"); // Ctrl+Alt+i, r
       } else { // when keycode is released
       }
       break;
 
-    case DEL_ROW_M: // Delete row in Sheets
+    case DEL_ROW: // Delete row in Sheets
       if (record->event.pressed) { // when keycode is pressed
         SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "d"); // Ctrl+Alt+e, d
       } else { // when keycode is released
       }
       break;
 
-    case INS_COL_M: // Insert column in Sheets
+    case INS_COL: // Insert column in Sheets
       if (record->event.pressed) { // when keycode is pressed
         SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "c"); // Ctrl+Alt+i, c
       } else { // when keycode is released
       }
       break;    
 
-    case DEL_COL_M: // Delete column in Sheets
+    case DEL_COL: // Delete column in Sheets
       if (record->event.pressed) { // when keycode is pressed
         SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "e"); // Ctrl+Alt+e, e
       } else { // when keycode is released
       }
       break;
+
+    // Windows
+    case INS_ROWW: // Insert row in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("i") SS_DELAY(250)) "r"); // Alt+Shift+i, r
+      } else { // when keycode is released
+      }
+      break;
+
+    case DEL_ROWW: // Delete row in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("e") SS_DELAY(250)) "d"); // Alt+Shift+e, d
+      } else { // when keycode is released
+      }
+      break;
+
+    case INS_COLW: // Insert column in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("i") SS_DELAY(250)) "c"); // Alt+Shift+i, c
+      } else { // when keycode is released
+      }
+      break;    
+
+    case DEL_COLW: // zDelete column in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("e") SS_DELAY(250)) "e"); // Alt+Shift+e, e
+      } else { // when keycode is released
+      }
+      break;
+
   }
   return true;
 };
@@ -628,7 +628,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 // #endif
 
 // Tap dance stuff
-static xtap make_firmware_state = {
+static xtap firm_state = {
   .is_press_action = true,
   .state = 0
 };
@@ -659,22 +659,22 @@ static xtap tilde_state = {
 };
 
 // Flash firmware
-void make_firmware_finished (qk_tap_dance_state_t *state, void *user_data) {
-  make_firmware_state.state = cur_dance(state); // Use the dance that favors being held
-  switch (make_firmware_state.state) {
+void firm_finished (qk_tap_dance_state_t *state, void *user_data) {
+  firm_state.state = cur_dance(state); // Use the dance that favors being held
+  switch (firm_state.state) {
     case SINGLE_TAP: SEND_STRING("make therick48:default:dfu"); break; // send therick48 make code
     case DOUBLE_TAP: SEND_STRING("make nori:default:avrdude"); break; // send nori make code
     case TRIPLE_TAP: SEND_STRING("make ori:default:dfu"); break; // send ori make code
   }
 }
 
-void make_firmware_reset (qk_tap_dance_state_t *state, void *user_data) {
-  switch (make_firmware_state.state) {
+void firm_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (firm_state.state) {
     case SINGLE_TAP: ; break;
     case DOUBLE_TAP: ; break;
     case TRIPLE_TAP: ; break;
   }
-  make_firmware_state.state = 0;
+  firm_state.state = 0;
 }
 
 // email
