@@ -662,9 +662,9 @@ static xtap tilde_state = {
 void firm_finished (qk_tap_dance_state_t *state, void *user_data) {
   firm_state.state = cur_dance(state); // Use the dance that favors being held
   switch (firm_state.state) {
-    case SINGLE_TAP: SEND_STRING("make therick48:default:dfu"); break; // send therick48 make code
+    case SINGLE_TAP: SEND_STRING("make ori:default:dfu"); break; // send ori make code
     case DOUBLE_TAP: SEND_STRING("make nori:default:avrdude"); break; // send nori make code
-    case TRIPLE_TAP: SEND_STRING("make ori:default:dfu"); break; // send ori make code
+    case TRIPLE_TAP: SEND_STRING("make therick48:default:dfu"); break; // send therick48 make code
   }
 }
 
