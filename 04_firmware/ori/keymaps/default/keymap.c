@@ -51,9 +51,7 @@ enum {
 // Tap dance enums
 enum {
   // Simple 
-  LCRLY = 0,
-  RCRLY,
-  PIPE,
+  PIPE = 0,
   // Complex
   FIRM,
   EMAIL,
