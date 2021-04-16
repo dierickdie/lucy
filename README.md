@@ -1,9 +1,9 @@
 # Ori
 ![alt text](https://github.com/dierickdie/Ori/blob/master/01_Ori_PCB.png)
 
-An ortho 4x12 plus flanking single columns keyboard with USB C, integrated MCU, and 19mm spacing.
+An ortho 4x12 plus macro/rotary column keyboard with south facing switches, USB C, integrated MCU, and 19mm spacing.
 
-This is essentially a dumbed down Planck clone, plus 2 columns. The columns can be snapped off to have just a 4x12.
+This is essentially a dumbed down Planck clone, plus a columns. The columns can be snapped off to have just a 4x12.
 
 **USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do, fry your computer, break anything, etc.
 
@@ -18,7 +18,7 @@ No
 No
 
 #### Does it have a rotary encoder?
-~No~ Yep! 2 of them, actually. Each encoder can be in 1 of 4 locations.
+~No~ Yep! 4 of them, actually
 
 #### Does it have hotswap?
 No
