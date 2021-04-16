@@ -61,7 +61,62 @@ enum {
   TILDE
 };
 
-#include "tap_dance.h"
+// Tap dance dance states
+// To activate SINGLE_HOLD, you will need to hold for 200ms first.
+// This tap dance favors keys that are used frequently in typing like 'f'
+int cur_dance (qk_tap_dance_state_t *state) {
+  if (state->count == 1) {
+    //If count = 1, and it has been interrupted - it doesn't matter if it is pressed or not: Send SINGLE_TAP
+    if (state->interrupted) {
+      //     if (!state->pressed) return SINGLE_TAP;
+      //need "permissive hold" here.
+      //     else return SINsGLE_HOLD;
+      //If the interrupting key is released before the tap-dance key, then it is a single HOLD
+      //However, if the tap-dance key is released first, then it is a single TAP
+      //But how to get access to the state of the interrupting key????
+      return SINGLE_TAP;
+    }
+    else {
+      if (!state->pressed) return SINGLE_TAP;
+      else return SINGLE_HOLD;
+    }
+  }
+  // If count = 2, and it has been interrupted - assume that user is trying to type the letter associated
+  // with single tap.
+  else if (state->count == 2) {
+    if (state->interrupted) return DOUBLE_SINGLE_TAP;
+    else if (state->pressed) return DOUBLE_HOLD;
+    else return DOUBLE_TAP;
+  }
+  else if ((state->count == 3) && ((state->interrupted) || (!state->pressed))) return TRIPLE_TAP;
+  else if (state->count == 3) return TRIPLE_HOLD;
+  else return 8; //magic number. At some point this method will expand to work for more presses
+}
+
+// This works well if you want this key to work as a "fast modifier". It favors being held over being tapped.
+int hold_cur_dance (qk_tap_dance_state_t *state) {
+  if (state->count == 1) {
+    if (state->interrupted) {
+      if (!state->pressed) return SINGLE_TAP;
+      else return SINGLE_HOLD;
+    }
+    else {
+      if (!state->pressed) return SINGLE_TAP;
+      else return SINGLE_HOLD;
+    }
+  }
+  // If count = 2, and it has been interrupted - assume that user is trying to type the letter associated
+  // with single tap.
+  else if (state->count == 2) {
+    if (state->pressed) return DOUBLE_HOLD;
+    else return DOUBLE_TAP;
+  }
+  else if (state->count == 3) {
+    if (!state->pressed) return TRIPLE_TAP;
+    else return TRIPLE_HOLD;
+  }
+  else return 8; // Magic number. At some point this method will expand to work for more presses
+}
 
 // For complex tap dances. Put it here so it can be used in any keymap
 void firm_finished (qk_tap_dance_state_t *state, void *user_data);
@@ -603,7 +658,7 @@ static xtap tilde_state = {
 
 // Flash firmware
 void firm_finished (qk_tap_dance_state_t *state, void *user_data) {
-  firm_state.state = cur_dance(state);
+  firm_state.state = cur_dance(state); // Use the dance that favors being held
   switch (firm_state.state) {
     case SINGLE_TAP: SEND_STRING("make ori:default:dfu"); break; // send ori make code
     case DOUBLE_TAP: SEND_STRING("make nori:default:avrdude"); break; // send nori make code
@@ -622,7 +677,7 @@ void firm_reset (qk_tap_dance_state_t *state, void *user_data) {
 
 // email
 void email_finished (qk_tap_dance_state_t *state, void *user_data) {
-  email_state.state = cur_dance(state);
+  email_state.state = cur_dance(state); // Use the dance that favors being held
   switch (email_state.state) {
     case SINGLE_TAP: register_code(KC_LSFT); register_code(KC_2); break; //send @
     case DOUBLE_TAP: SEND_STRING("/email"); break; // send email address
@@ -641,7 +696,7 @@ void email_reset (qk_tap_dance_state_t *state, void *user_data) {
 
 // Sum
 void sum_finished (qk_tap_dance_state_t *state, void *user_data) {
-  sum_state.state = cur_dance(state);
+  sum_state.state = cur_dance(state); // Use the dance that favors being held
   switch (sum_state.state) {
     case SINGLE_TAP: register_code(KC_EQL); break; // send =
     case DOUBLE_TAP: SEND_STRING("=sum("); break; // =sum(
@@ -660,7 +715,7 @@ void sum_reset (qk_tap_dance_state_t *state, void *user_data) {
 
 // Left brackets 
 void lbkts_finished (qk_tap_dance_state_t *state, void *user_data) {
-  lbkts_state.state = cur_dance(state);
+  lbkts_state.state = cur_dance(state); // Use the dance that favors being held
   switch (lbkts_state.state) {
     case SINGLE_TAP: register_code(KC_LSFT); register_code(KC_9); break; // send (
     case DOUBLE_TAP: register_code(KC_LBRC); break; // send [
@@ -679,7 +734,7 @@ void lbkts_reset (qk_tap_dance_state_t *state, void *user_data) {
 
 // Right brackets
 void rbkts_finished (qk_tap_dance_state_t *state, void *user_data) {
-  rbkts_state.state = cur_dance(state);
+  rbkts_state.state = cur_dance(state); //Use the dance that favors being held
   switch (rbkts_state.state) {
     case SINGLE_TAP: register_code(KC_LSFT); register_code(KC_0); break; // send )
     case DOUBLE_TAP: register_code(KC_RBRC); break; // send ]
@@ -698,7 +753,7 @@ void rbkts_reset (qk_tap_dance_state_t *state, void *user_data) {
 
 // Tilde
 void tilde_finished (qk_tap_dance_state_t *state, void *user_data) {
-  tilde_state.state = cur_dance(state);
+  tilde_state.state = cur_dance(state); // Use the dance that favors being held
   switch (tilde_state.state) {
     case SINGLE_TAP: register_code(KC_GRAVE); break; // send `
     case DOUBLE_TAP: register_code(KC_LSFT); register_code(KC_GRAVE); break; // send ~
