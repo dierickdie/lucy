@@ -515,7 +515,24 @@ void encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) {
     switch(biton32(layer_state)){
       // Base layers
-      case 0: // Windows
+      case 0: // macOS
+      if (clockwise) { // Vertical scroll
+        tap_code(KC_MS_WH_UP);
+      } else {
+        tap_code(KC_MS_WH_DOWN);
+      }
+      break;
+
+      case 7: // Windows
+      if (clockwise) { // Vertical scroll
+        tap_code(KC_MS_WH_UP);
+      } else {
+        tap_code(KC_MS_WH_DOWN);
+      }
+      break;
+
+      // Raise layers      
+      case 2: // macOS
       if (clockwise) { // Volume
         tap_code(KC_VOLD);
       } else {
@@ -523,33 +540,16 @@ void encoder_update_user(uint8_t index, bool clockwise) {
       }
       break;
 
-      case 7: // macOS
+      case 9: // Windows
       if (clockwise) { // Volume
         tap_code(KC_VOLD);
       } else {
         tap_code(KC_VOLU);
-      }
-      break;
-
-      // Raise layers
-      case 2: // Windows
-      if (clockwise) { // Vertical scroll
-        tap_code(KC_MS_WH_DOWN);
-      } else {
-        tap_code(KC_MS_WH_UP);
-      }
-      break;
-
-      case 9: // macOS
-      if (clockwise) { // Vertical scroll
-        tap_code(KC_MS_WH_DOWN);
-      } else {
-        tap_code(KC_MS_WH_UP);
       }
       break;
 
       // Function layers
-      case 3: // Windows
+      case 3: // macOS
       if (clockwise) { // Horizontal scroll
         tap_code(KC_MS_WH_RIGHT);
       } else {
@@ -557,7 +557,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
       }
       break;
 
-      case 10: // macOS
+      case 10: // Windows
       if (clockwise) { // Horizontal scroll
         tap_code(KC_MS_WH_RIGHT);
       } else {
