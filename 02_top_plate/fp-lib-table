@@ -18,4 +18,5 @@
   (lib (name acheron_Logos)(type KiCad)(uri /Users/rickkremer/Documents/GitHub/Libraries/AcheronLibrary-master/footprints/acheron_Logos.pretty)(options "")(descr ""))
   (lib (name acheron_Graphics)(type KiCad)(uri /Users/rickkremer/Documents/GitHub/Libraries/AcheronLibrary-master/footprints/acheron_Graphics.pretty)(options "")(descr ""))
   (lib (name acheron_Hardware)(type KiCad)(uri /Users/rickkremer/Documents/GitHub/Libraries/AcheronLibrary-master/footprints/acheron_Hardware.pretty)(options "")(descr ""))
+  (lib (name Keeb_footprints)(type KiCad)(uri /Users/rickkremer/Documents/GitHub/footprints/Keeb_footprints.pretty)(options "")(descr ""))
 )

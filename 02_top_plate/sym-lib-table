@@ -7,4 +7,5 @@
   (lib (name acheronSymbols)(type Legacy)(uri /Users/rickkremer/Documents/GitHub/Libraries/AcheronLibrary-master/symbols/acheronSymbols.lib)(options "")(descr ""))
   (lib (name shark-cache)(type Legacy)(uri /Users/rickkremer/Documents/GitHub/SharkPCB-master/kicadFiles/shark-cache.lib)(options "")(descr ""))
   (lib (name shark-rescue)(type Legacy)(uri /Users/rickkremer/Documents/GitHub/SharkPCB-master/kicadFiles/shark-rescue.lib)(options "")(descr ""))
+  (lib (name keebio)(type Legacy)(uri /Users/rickkremer/Documents/GitHub/libraries/keebio-components-master/keebio.lib)(options "")(descr ""))
 )
