@@ -618,7 +618,7 @@ F 3 "~" H 4350 4000 50  0001 C CNN
 	1    4350 4000
 	1    0    0    -1  
 $EndComp
-Text Notes 4650 4250 0    50   ~ 0
+Text Notes 4400 4250 0    50   ~ 0
 Mousebites
 Wire Notes Line
 	5200 3350 5200 4350
@@ -772,4 +772,124 @@ Wire Notes Line
 	4050 4350 2350 4350
 Wire Notes Line
 	2350 4350 2350 3250
+$Comp
+L Mechanical:MountingHole H12
+U 1 1 611EB2C1
+P 2500 4600
+F 0 "H12" H 2600 4646 50  0000 L CNN
+F 1 "MountingHole" H 2600 4555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 2500 4600 50  0001 C CNN
+F 3 "~" H 2500 4600 50  0001 C CNN
+	1    2500 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H13
+U 1 1 611EB2C7
+P 2500 4800
+F 0 "H13" H 2600 4846 50  0000 L CNN
+F 1 "MountingHole" H 2600 4755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 2500 4800 50  0001 C CNN
+F 3 "~" H 2500 4800 50  0001 C CNN
+	1    2500 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H14
+U 1 1 611EB2CD
+P 2500 5000
+F 0 "H14" H 2600 5046 50  0000 L CNN
+F 1 "MountingHole" H 2600 4955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 2500 5000 50  0001 C CNN
+F 3 "~" H 2500 5000 50  0001 C CNN
+	1    2500 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H15
+U 1 1 611EB2D3
+P 2500 5200
+F 0 "H15" H 2600 5246 50  0000 L CNN
+F 1 "MountingHole" H 2600 5155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 2500 5200 50  0001 C CNN
+F 3 "~" H 2500 5200 50  0001 C CNN
+	1    2500 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H16
+U 1 1 611EB2D9
+P 2500 5400
+F 0 "H16" H 2600 5446 50  0000 L CNN
+F 1 "MountingHole" H 2600 5355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 2500 5400 50  0001 C CNN
+F 3 "~" H 2500 5400 50  0001 C CNN
+	1    2500 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H17
+U 1 1 611EB2DF
+P 3350 4600
+F 0 "H17" H 3450 4646 50  0000 L CNN
+F 1 "MountingHole" H 3450 4555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 3350 4600 50  0001 C CNN
+F 3 "~" H 3350 4600 50  0001 C CNN
+	1    3350 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H18
+U 1 1 611EB2E5
+P 3350 4800
+F 0 "H18" H 3450 4846 50  0000 L CNN
+F 1 "MountingHole" H 3450 4755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 3350 4800 50  0001 C CNN
+F 3 "~" H 3350 4800 50  0001 C CNN
+	1    3350 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H19
+U 1 1 611EB2EB
+P 3350 5000
+F 0 "H19" H 3450 5046 50  0000 L CNN
+F 1 "MountingHole" H 3450 4955 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 3350 5000 50  0001 C CNN
+F 3 "~" H 3350 5000 50  0001 C CNN
+	1    3350 5000
+	1    0    0    -1  
+$EndComp
+Text Notes 2850 5650 0    50   ~ 0
+Inner mount holes
+Wire Notes Line
+	4050 5750 2350 5750
+$Comp
+L Mechanical:MountingHole H20
+U 1 1 611F35FE
+P 3350 5200
+F 0 "H20" H 3450 5246 50  0000 L CNN
+F 1 "MountingHole" H 3450 5155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 3350 5200 50  0001 C CNN
+F 3 "~" H 3350 5200 50  0001 C CNN
+	1    3350 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H21
+U 1 1 611F3604
+P 3350 5400
+F 0 "H21" H 3450 5446 50  0000 L CNN
+F 1 "MountingHole" H 3450 5355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 3350 5400 50  0001 C CNN
+F 3 "~" H 3350 5400 50  0001 C CNN
+	1    3350 5400
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	2350 4450 4050 4450
+Wire Notes Line
+	4050 4450 4050 5750
+Wire Notes Line
+	2350 4450 2350 5750
 $EndSCHEMATC
