@@ -3,7 +3,7 @@
 
 An ortho 4x12 plus macro column keyboard.
 
-This is essentially a dumbed down Planck clone, plus a column. The column can be snapped off to have just a 4x12.
+This is essentially a dumbed down Planck clone, plus a column.
 
 **USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do, fry your computer, break anything, etc.
 
@@ -28,6 +28,3 @@ No
 
 #### Will you add any of these?
 No
-
-#### Will it fit a Planck case?
-No. This has standard 19.05mm spacing
