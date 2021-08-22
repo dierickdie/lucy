@@ -1,5 +1,5 @@
 # Ori
-![alt text](https://github.com/dierickdie/Ori/blob/master/01_Ori_PCB.png)
+![alt text](https://github.com/dierickdie/ori/blob/master/01.1_non-snap-off/01_ori.png)
 
 An ortho 4x12 plus macro column keyboard.
 
