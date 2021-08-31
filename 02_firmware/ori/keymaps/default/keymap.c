@@ -169,7 +169,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   #define GUI_HOME      LGUI(KC_HOME) // CMD + Home
   #define SA_BS 		    MT(MOD_LSFT | MOD_LALT, KC_BSPC)
   #define MUTE_ZOOM     LGUI(LSFT(KC_A)) // Mute Zoom
- // #define CAM_ZOOM      LGUI(LSFT(KC_V) // Toggle Zoom camera
+  #define CAM_ZOOM      LGUI(LSFT(KC_V)) // Toggle Zoom camera
   #define LOCK          LGUI(LCTL(KC_Q)) // Lock macOS
   #define LOCKW         LGUI(KC_L) // Lock Windows
 
@@ -191,7 +191,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_ortho_4x12x1(
     KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,        _______,
     FUN(TAB),   ALT(A),     KC_S,       KC_D,       GUI(F),     KC_G,       KC_H,       GUI(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),     MUTE_ZOOM,
-    KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),      _______,
+    KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),      CAM_ZOOM,
     KC_LGUI,    KC_LSFT,    KC_LCTRL,   KC_LALT,    LWR(BSPC),  FUN2(BSPC), FUN(SPC),   RSE(SPC),   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      LOCK
   ),
 
