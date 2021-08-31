@@ -30,4 +30,4 @@ HD44780_ENABLE = no 		# Enable support for HD44780 based LCDs (+400)
 ENCODER_ENABLE = yes        # Enable encoder
 TAP_DANCE_ENABLE = yes      # Enable Tap Dance
 
-LAYOUTS = ortho_4x12 ortho_1x4x12 ortho_4x12x1
+LAYOUTS = ortho_4x12 ortho_4x12x1

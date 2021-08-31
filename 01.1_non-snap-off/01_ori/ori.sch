@@ -244,17 +244,17 @@ DBUS-
 Text GLabel 7450 6000 2    50   Output ~ 0
 row1
 Text GLabel 5300 7400 0    50   Output ~ 0
-col2
+col1
 Text GLabel 5300 6400 0    50   Output ~ 0
-col3
+col2
 Text GLabel 5300 6200 0    50   Output ~ 0
-col11
-Text GLabel 5300 6100 0    50   Output ~ 0
 col10
-Text GLabel 5300 6000 0    50   Output ~ 0
+Text GLabel 5300 6100 0    50   Output ~ 0
 col9
-Text GLabel 5300 5300 0    50   Output ~ 0
+Text GLabel 5300 6000 0    50   Output ~ 0
 col8
+Text GLabel 5300 5300 0    50   Output ~ 0
+col7
 Text GLabel 7450 6100 2    50   Output ~ 0
 row0
 $Comp
@@ -269,11 +269,9 @@ F 3 "" H 7450 6300 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 7450 5800 2    50   Output ~ 0
-col5
+col4
 Text GLabel 7450 5700 2    50   Output ~ 0
-col6
-Text GLabel 7450 5600 2    50   Output ~ 0
-col7
+col5
 NoConn ~ 7450 5500
 Text GLabel 5300 9300 2    50   BiDi ~ 0
 D+
@@ -428,7 +426,7 @@ F 3 "~" H 5150 8200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text GLabel 7450 5900 2    50   Output ~ 0
-col4
+col3
 Text GLabel 7450 7100 2    50   Output ~ 0
 row3
 Text GLabel 7450 7200 2    50   Output ~ 0
@@ -551,9 +549,7 @@ F 3 "" H 14300 3900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 14650 2500
-Text GLabel 13350 1700 1    50   Input ~ 0
-col0
-Text GLabel 5300 6300 0    50   Output ~ 0
+Text GLabel 4000 1700 1    50   Input ~ 0
 col0
 Wire Wire Line
 	4950 6500 4950 6650
@@ -2274,27 +2270,25 @@ Connection ~ 12500 2500
 Wire Wire Line
 	13350 2500 13350 3200
 Connection ~ 13350 2500
-Text GLabel 4000 1700 1    50   Input ~ 0
-col1
 Text GLabel 4850 1700 1    50   Input ~ 0
-col2
+col1
 Text GLabel 5700 1700 1    50   Input ~ 0
-col3
+col2
 Text GLabel 6550 1700 1    50   Input ~ 0
-col4
+col3
 Text GLabel 7400 1700 1    50   Input ~ 0
-col5
+col4
 Text GLabel 8250 1700 1    50   Input ~ 0
-col6
+col5
 Text GLabel 9100 1700 1    50   Input ~ 0
-col7
+col6
 Text GLabel 9950 1700 1    50   Input ~ 0
-col8
+col7
 Text GLabel 10800 1700 1    50   Input ~ 0
-col9
+col8
 Text GLabel 11650 1700 1    50   Input ~ 0
-col10
-Text GLabel 12500 1700 1    50   Input ~ 0
+col9
+Text GLabel 13350 1700 1    50   Input ~ 0
 col11
 Text GLabel 14650 1700 1    50   Input ~ 0
 col12
@@ -2303,7 +2297,7 @@ enc0b
 Text GLabel 5300 7300 0    50   Output ~ 0
 enc0a
 Text GLabel 7450 7000 2    50   Output ~ 0
-col1
+col0
 Text GLabel 2800 4250 0    50   Input ~ 0
 row3
 Text GLabel 2800 3550 0    50   Input ~ 0
@@ -2971,4 +2965,10 @@ Wire Notes Line
 	10850 8300 10850 9550
 Wire Notes Line
 	9100 8300 9100 9550
+Text GLabel 12500 1700 1    50   Input ~ 0
+col10
+Text GLabel 5300 6300 0    50   Output ~ 0
+col11
+Text GLabel 7450 5600 2    50   Output ~ 0
+col6
 $EndSCHEMATC

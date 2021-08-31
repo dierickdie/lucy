@@ -131,11 +131,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 // Screenshots
   // macOS
-  #define WHLSCR        LGUI(LSFT(KC_3))  // Capture whole screen macOS
-  #define PRNTSCR       LGUI(LSFT(KC_4))  // Select screen macOS
-  #define PRNTSCRC      LGUI(LSFT(LCTL(KC_4)))  // Select screen copy macOS
+  #define WHLSCR        LGUI(LSFT(KC_3)) // Capture whole screen macOS
+  #define PRNTSCR       LGUI(LSFT(KC_4)) // Select screen macOS
+  #define PRNTSCRC      LGUI(LSFT(LCTL(KC_4))) // Select screen copy macOS
 
-// Windows
+  // Windows
   #define PRNTSCRW      LGUI(LSFT(KC_S)) // Screen snip Windows
 
 // Chrome Tabs
@@ -149,28 +149,29 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 // Google Sheets shortcuts
   // macOS
-  #define SHT_LEFT      LALT(KC_UP)  // Go to next sheet in Sheets macOS
-  #define SHT_RIGHT     LALT(KC_DOWN)  // Go to previous sheet in Sheets macOS
-  #define HIDE_ROW      LGUI(LALT(KC_9))  // Hide row macOS
-  #define UNHIDE_ROW    LGUI(LSFT(KC_9))  // Unhide row macOS
-  #define HIDE_COL      LGUI(LALT(KC_0))  // Hide column macOS
-  #define UNHIDE_COL    LGUI(LSFT(KC_0))  // Unhide column macOS
+  #define SHT_LEFT      LALT(KC_UP) // Go to next sheet in Sheets macOS
+  #define SHT_RIGHT     LALT(KC_DOWN) // Go to previous sheet in Sheets macOS
+  #define HIDE_ROW      LGUI(LALT(KC_9)) // Hide row macOS
+  #define UNHIDE_ROW    LGUI(LSFT(KC_9)) // Unhide row macOS
+  #define HIDE_COL      LGUI(LALT(KC_0)) // Hide column macOS
+  #define UNHIDE_COL    LGUI(LSFT(KC_0)) // Unhide column macOS
 
   // Windows
-  #define SHT_LEFTW     LALT(KC_UP)  // Go to next sheet in Sheets Windows
-  #define SHT_RIGHTW    LALT(KC_DOWN)  // Go to previous sheet in Sheets Windows
-  #define HIDE_ROWW     LCTL(LALT(KC_9))  // Hide row Windows
-  #define UNHIDE_ROWW   LCTL(LSFT(KC_9))  // Unhide row Windows
-  #define HIDE_COLW     LCTL(LALT(KC_0))  // Hide column Windows
-  #define UNHIDE_COLW   LCTL(LSFT(KC_0))  // Unhide column Windows
+  #define SHT_LEFTW     LALT(KC_UP) // Go to next sheet in Sheets Windows
+  #define SHT_RIGHTW    LALT(KC_DOWN) // Go to previous sheet in Sheets Windows
+  #define HIDE_ROWW     LCTL(LALT(KC_9)) // Hide row Windows
+  #define UNHIDE_ROWW   LCTL(LSFT(KC_9)) // Unhide row Windows
+  #define HIDE_COLW     LCTL(LALT(KC_0)) // Hide column Windows
+  #define UNHIDE_COLW   LCTL(LSFT(KC_0)) // Unhide column Windows
 
 // Other
   #define CTL_HOME      LCTL(KC_HOME) // Ctrl + Home
   #define GUI_HOME      LGUI(KC_HOME) // CMD + Home
   #define SA_BS 		    MT(MOD_LSFT | MOD_LALT, KC_BSPC)
   #define MUTE_ZOOM     LGUI(LSFT(KC_A)) // Mute Zoom
-  #define LOCK          LGUI(LCTL(KC_Q))
-  #define LOCKW         LGUI(KC_L)
+ // #define CAM_ZOOM      LGUI(LSFT(KC_V) // Toggle Zoom camera
+  #define LOCK          LGUI(LCTL(KC_Q)) // Lock macOS
+  #define LOCKW         LGUI(KC_L) // Lock Windows
 
 // Begin keymaps
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -190,8 +191,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_ortho_4x12x1(
     KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,        _______,
     FUN(TAB),   ALT(A),     KC_S,       KC_D,       GUI(F),     KC_G,       KC_H,       GUI(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),     MUTE_ZOOM,
-    KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),      LOCK,
-    KC_LGUI,    KC_LSFT,    KC_LCTRL,   KC_LALT,    LWR(BSPC),  FUN2(BSPC), FUN(SPC),   RSE(SPC),   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      _______
+    KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),      _______,
+    KC_LGUI,    KC_LSFT,    KC_LCTRL,   KC_LALT,    LWR(BSPC),  FUN2(BSPC), FUN(SPC),   RSE(SPC),   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      LOCK
   ),
 
 /* Lower macOS
