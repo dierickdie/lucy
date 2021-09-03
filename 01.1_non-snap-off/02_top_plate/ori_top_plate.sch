@@ -709,19 +709,8 @@ Wire Notes Line
 $Comp
 L Mechanical:MountingHole H9
 U 1 1 6122943F
-P 4300 3250
-F 0 "H9" H 4400 3296 50  0000 L CNN
-F 1 "MountingHole" H 4400 3205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 4300 3250 50  0001 C CNN
-F 3 "~" H 4300 3250 50  0001 C CNN
-	1    4300 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H10
-U 1 1 61229445
 P 4300 3450
-F 0 "H10" H 4400 3496 50  0000 L CNN
+F 0 "H9" H 4400 3496 50  0000 L CNN
 F 1 "MountingHole" H 4400 3405 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 4300 3450 50  0001 C CNN
 F 3 "~" H 4300 3450 50  0001 C CNN
@@ -729,10 +718,10 @@ F 3 "~" H 4300 3450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H11
-U 1 1 6122944B
+L Mechanical:MountingHole H10
+U 1 1 61229445
 P 4300 3650
-F 0 "H11" H 4400 3696 50  0000 L CNN
+F 0 "H10" H 4400 3696 50  0000 L CNN
 F 1 "MountingHole" H 4400 3605 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 4300 3650 50  0001 C CNN
 F 3 "~" H 4300 3650 50  0001 C CNN
@@ -740,10 +729,10 @@ F 3 "~" H 4300 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H12
-U 1 1 61229451
+L Mechanical:MountingHole H11
+U 1 1 6122944B
 P 4300 3850
-F 0 "H12" H 4400 3896 50  0000 L CNN
+F 0 "H11" H 4400 3896 50  0000 L CNN
 F 1 "MountingHole" H 4400 3805 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 4300 3850 50  0001 C CNN
 F 3 "~" H 4300 3850 50  0001 C CNN
@@ -751,10 +740,10 @@ F 3 "~" H 4300 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H13
-U 1 1 61229457
+L Mechanical:MountingHole H12
+U 1 1 61229451
 P 4300 4050
-F 0 "H13" H 4400 4096 50  0000 L CNN
+F 0 "H12" H 4400 4096 50  0000 L CNN
 F 1 "MountingHole" H 4400 4005 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 4300 4050 50  0001 C CNN
 F 3 "~" H 4300 4050 50  0001 C CNN
@@ -762,36 +751,25 @@ F 3 "~" H 4300 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H14
-U 1 1 6122945D
-P 5150 3250
-F 0 "H14" H 5250 3296 50  0000 L CNN
-F 1 "MountingHole" H 5250 3205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 5150 3250 50  0001 C CNN
-F 3 "~" H 5150 3250 50  0001 C CNN
-	1    5150 3250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H15
-U 1 1 61229463
-P 5150 3450
-F 0 "H15" H 5250 3496 50  0000 L CNN
-F 1 "MountingHole" H 5250 3405 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 5150 3450 50  0001 C CNN
-F 3 "~" H 5150 3450 50  0001 C CNN
-	1    5150 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole H16
-U 1 1 61229469
+L Mechanical:MountingHole H13
+U 1 1 61229457
 P 5150 3650
-F 0 "H16" H 5250 3696 50  0000 L CNN
+F 0 "H13" H 5250 3696 50  0000 L CNN
 F 1 "MountingHole" H 5250 3605 50  0000 L CNN
 F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 5150 3650 50  0001 C CNN
 F 3 "~" H 5150 3650 50  0001 C CNN
 	1    5150 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H14
+U 1 1 6122945D
+P 5150 3450
+F 0 "H14" H 5250 3496 50  0000 L CNN
+F 1 "MountingHole" H 5250 3405 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2_DIN965" H 5150 3450 50  0001 C CNN
+F 3 "~" H 5150 3450 50  0001 C CNN
+	1    5150 3450
 	1    0    0    -1  
 $EndComp
 Text Notes 4650 4250 0    50   ~ 0
@@ -821,9 +799,9 @@ F 3 "~" H 5150 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
-	5850 3100 4150 3100
+	5850 4350 5850 3250
 Wire Notes Line
-	5850 3100 5850 4350
+	5850 3250 4150 3250
 Wire Notes Line
-	4150 3100 4150 4350
+	4150 3250 4150 4350
 $EndSCHEMATC
