@@ -26,13 +26,13 @@
 #define DIODE_DIRECTION COL2ROW
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCING_DELAY 0
 
 /* encoder support */
 #define ENCODERS_PAD_A { D3 }
 #define ENCODERS_PAD_B { D2 }
 
-#define ENCODER_RESOLUTION 4
+#define ENCODER_RESOLUTION 2
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
