@@ -9,8 +9,8 @@
 #define PRODUCT_ID      0x0001
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    therick
-#define PRODUCT         Ori
-#define DESCRIPTION     Blatant copy of Planck plus 2 columns
+#define PRODUCT         ori
+#define DESCRIPTION     Blatant copy of Planck plus a column
 
 /* key matrix size */
 #define MATRIX_ROWS 4
