@@ -223,10 +223,6 @@ Text GLabel 5300 6800 0    50   Input ~ 0
 XTAL1
 Text GLabel 5300 6900 0    50   Input ~ 0
 XTAL2
-Text GLabel 3250 7750 2    50   BiDi ~ 0
-DBUS+
-Text GLabel 3250 7450 2    50   BiDi ~ 0
-DBUS-
 Text GLabel 7450 6000 2    50   Output ~ 0
 row1
 Text GLabel 5300 7400 0    50   Output ~ 0
@@ -358,8 +354,6 @@ F 3 "~" H 4850 5800 50  0001 C CNN
 	1    4850 5800
 	0    1    1    0   
 $EndComp
-Wire Notes Line
-	3950 8100 3950 9550
 Text GLabel 4800 6650 0    50   Input ~ 0
 ISP_Reset
 $Comp
@@ -2564,10 +2558,6 @@ F 3 "" H 2100 8050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
-	5800 8100 5800 9550
-Wire Notes Line
-	3950 8100 5800 8100
-Wire Notes Line
 	3950 9550 5800 9550
 $Comp
 L Device:Polyfuse_Small F1
@@ -2694,18 +2684,16 @@ DBUS-
 Text GLabel 4100 8950 3    50   BiDi ~ 0
 DBUS+
 $Comp
-L keyboard_parts:PRTR5V0U2X U?
+L keyboard_parts:PRTR5V0U2X U2
 U 1 1 616D1410
 P 4800 8600
-F 0 "U?" H 4825 8689 50  0000 C CNN
+F 0 "U2" H 4825 8689 50  0000 C CNN
 F 1 "PRTR5V0U2X" H 4825 8590 60  0000 C CNN
-F 2 "" H 4800 8600 50  0001 C CNN
+F 2 "Keebio-Parts:SOT-143B" H 4800 8600 50  0001 C CNN
 F 3 "" H 4800 8600 50  0001 C CNN
 	1    4800 8600
 	1    0    0    -1  
 $EndComp
-Text GLabel 3250 7150 2    50   BiDi ~ 0
-D+
 $Comp
 L Device:R R3
 U 1 1 5E44C75B
@@ -2719,39 +2707,6 @@ F 3 "~" H 4300 9050 50  0001 C CNN
 $EndComp
 Text Notes 4900 9500 0    50   ~ 0
 ESD Protection
-$Comp
-L keyboard_parts:PRTR5V0U2X U?
-U 1 1 61869AB0
-P 3350 6600
-F 0 "U?" H 3400 6550 50  0000 C CNN
-F 1 "PRTR5V0U2X" H 3350 6200 60  0000 C CNN
-F 2 "" H 3350 6600 50  0001 C CNN
-F 3 "" H 3350 6600 50  0001 C CNN
-	1    3350 6600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3050 6900 2950 6900
-Connection ~ 2950 6900
-Wire Wire Line
-	2950 6900 2950 7150
-Wire Wire Line
-	2750 6550 2750 6600
-Wire Wire Line
-	2750 6850 2750 6900
-Wire Wire Line
-	2750 6900 2950 6900
-Connection ~ 2750 6900
-Wire Wire Line
-	2750 6900 2750 6950
-Connection ~ 2750 6600
-Wire Wire Line
-	2750 6600 2750 6650
-Wire Wire Line
-	3800 6900 3800 7150
-Connection ~ 3800 6900
-Wire Wire Line
-	3800 6900 3700 6900
 Wire Wire Line
 	4500 8900 4300 8900
 Wire Wire Line
@@ -2760,17 +2715,6 @@ Wire Wire Line
 	5550 8900 5550 9000
 Text GLabel 4300 9200 3    50   BiDi ~ 0
 D+
-$Comp
-L Device:R R?
-U 1 1 61AB31D0
-P 3100 7150
-F 0 "R?" V 3100 7100 28  0000 C CNN
-F 1 "22" V 3100 7200 28  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3030 7150 50  0001 C CNN
-F 3 "~" H 3100 7150 50  0001 C CNN
-	1    3100 7150
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5150 8900 5350 8900
 $Comp
@@ -2784,42 +2728,8 @@ F 3 "~" H 5350 9050 50  0001 C CNN
 	1    5350 9050
 	-1   0    0    1   
 $EndComp
-Text GLabel 4100 7150 2    50   BiDi ~ 0
-D-
-$Comp
-L Device:R R?
-U 1 1 61B0952A
-P 3950 7150
-F 0 "R?" V 3950 7100 28  0000 C CNN
-F 1 "22" V 3950 7200 28  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3880 7150 50  0001 C CNN
-F 3 "~" H 3950 7150 50  0001 C CNN
-	1    3950 7150
-	0    1    1    0   
-$EndComp
 Text GLabel 5350 9200 3    50   BiDi ~ 0
 D-
-$Comp
-L power:GND #PWR?
-U 1 1 61B33909
-P 3050 6750
-F 0 "#PWR?" H 3050 6500 50  0001 C CNN
-F 1 "GND" V 3055 6622 50  0000 R CNN
-F 2 "" H 3050 6750 50  0001 C CNN
-F 3 "" H 3050 6750 50  0001 C CNN
-	1    3050 6750
-	0    1    1    0   
-$EndComp
-Text GLabel 3700 6750 2    50   Input ~ 0
-VBUS
-Wire Wire Line
-	4000 6600 4000 6900
-Wire Wire Line
-	3900 6900 3800 6900
-Wire Wire Line
-	2750 6600 4000 6600
-Wire Wire Line
-	3800 6900 4000 6900
 $Comp
 L Ori-rescue:TYPE-C-31-M12_13-acheronSymbols J1
 U 1 1 5E315A49
@@ -2840,4 +2750,28 @@ Wire Wire Line
 Connection ~ 5350 8900
 Wire Wire Line
 	5350 8900 5550 8900
+Text GLabel 2800 6600 2    50   BiDi ~ 0
+DBUS-
+Text GLabel 2800 6900 2    50   BiDi ~ 0
+DBUS+
+Wire Wire Line
+	2750 6550 2750 6600
+Wire Wire Line
+	2750 6850 2750 6900
+Wire Wire Line
+	2800 6600 2750 6600
+Connection ~ 2750 6600
+Wire Wire Line
+	2750 6600 2750 6650
+Wire Wire Line
+	2800 6900 2750 6900
+Connection ~ 2750 6900
+Wire Wire Line
+	2750 6900 2750 6950
+Wire Notes Line
+	3950 9550 3950 8400
+Wire Notes Line
+	3950 8400 5800 8400
+Wire Notes Line
+	5800 8400 5800 9550
 $EndSCHEMATC
