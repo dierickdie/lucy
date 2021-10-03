@@ -517,25 +517,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 bool encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) {
     switch(biton32(layer_state)){
-      // Base layers
-      case 0: // macOS
-        if (clockwise) { // Vertical scroll
-          tap_code(KC_MS_WH_DOWN);
-        } else {
-          tap_code(KC_MS_WH_UP);
-        }
-        break;
-
-      case 7: // Windows
-        if (clockwise) { // Vertical scroll
-          tap_code(KC_MS_WH_UP);
-        } else {
-          tap_code(KC_MS_WH_DOWN);
-        }
-        break;
-
-      // Raise layers      
-        case 2: // macOS
+      // Base layers      
+        case 0: // macOS
           if (clockwise) { // Volume
             tap_code(KC_VOLD);
           } else {
@@ -543,11 +526,28 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
           }
         break;
 
-      case 9: // Windows
+      case 7: // Windows
         if (clockwise) { // Volume
           tap_code(KC_VOLD);
         } else {
           tap_code(KC_VOLU);
+        }
+        break;
+
+      // Raise layers
+      case 2: // macOS
+        if (clockwise) { // Vertical scroll
+          tap_code(KC_MS_WH_DOWN);
+        } else {
+          tap_code(KC_MS_WH_UP);
+        }
+        break;
+
+      case 9: // Windows
+        if (clockwise) { // Vertical scroll
+          tap_code(KC_MS_WH_UP);
+        } else {
+          tap_code(KC_MS_WH_DOWN);
         }
         break;
 

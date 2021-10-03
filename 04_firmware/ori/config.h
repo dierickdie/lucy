@@ -32,11 +32,18 @@
 #define ENCODERS_PAD_A { D3 }
 #define ENCODERS_PAD_B { D2 }
 
-#define ENCODER_RESOLUTION 2
+#define ENCODER_RESOLUTION 3
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
+
+// QMK-DFU
+//#define QMK_ESC_OUTPUT F1  // COL pin if COL2ROW
+//#define QMK_ESC_INPUT  D5  // ROW pin if COL2ROW
+// Optional:
+//#define QMK_LED E6
+//#define QMK_SPEAKER C6
 
 
