@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# ATMEGA32U4-keyboard_parts
+# ATMEGA32U4-keyboard_parts-Ori-rescue
 #
-DEF ATMEGA32U4-keyboard_parts U 0 40 Y Y 1 F N
+DEF ATMEGA32U4-keyboard_parts-Ori-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 -1250 60 H V C CNN
-F1 "ATMEGA32U4-keyboard_parts" 0 1250 60 H V C CNN
+F1 "ATMEGA32U4-keyboard_parts-Ori-rescue" 0 1250 60 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -57,11 +57,11 @@ X PB1/SCK 9 -1050 250 300 R 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# AVR-ISP-6_mod-Connector
+# AVR-ISP-6_mod-Connector-Ori-rescue
 #
-DEF AVR-ISP-6_mod-Connector J 0 40 Y Y 1 F N
+DEF AVR-ISP-6_mod-Connector-Ori-rescue J 0 40 Y Y 1 F N
 F0 "J" 0 400 50 H V L CNN
-F1 "AVR-ISP-6_mod-Connector" 0 -300 50 H V L CNN
+F1 "AVR-ISP-6_mod-Connector-Ori-rescue" 0 -300 50 H V L CNN
 F2 "" -250 50 50 V I C CNN
 F3 "" -1275 -550 50 H I C CNN
 $FPLIST
@@ -85,11 +85,11 @@ X GND 6 -100 -400 150 U 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# D-keyboard_parts
+# D-keyboard_parts-Ori-rescue
 #
-DEF D-keyboard_parts D 0 40 Y Y 1 F N
+DEF D-keyboard_parts-Ori-rescue D 0 40 Y Y 1 F N
 F0 "D" -150 -50 60 V V C CNN
-F1 "D-keyboard_parts" 150 -50 60 V I C CNN
+F1 "D-keyboard_parts-Ori-rescue" 150 -50 60 V I C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -100,11 +100,11 @@ X ~ 2 0 -150 50 U 60 60 1 1 P
 ENDDRAW
 ENDDEF
 #
-# KEYSW-keyboard_parts
+# KEYSW-keyboard_parts-Ori-rescue
 #
-DEF KEYSW-keyboard_parts K? 0 40 Y Y 1 F N
+DEF KEYSW-keyboard_parts-Ori-rescue K? 0 40 Y Y 1 F N
 F0 "K?" -50 0 60 H V C CNN
-F1 "KEYSW-keyboard_parts" 0 -100 60 H I C CNN
+F1 "KEYSW-keyboard_parts-Ori-rescue" 0 -100 60 H I C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -116,11 +116,11 @@ X ~ 2 -300 0 50 R 60 60 1 1 P
 ENDDRAW
 ENDDEF
 #
-# LED-keyboard_parts
+# LED-keyboard_parts-Ori-rescue
 #
-DEF LED-keyboard_parts LED 0 40 Y N 1 F N
+DEF LED-keyboard_parts-Ori-rescue LED 0 40 Y N 1 F N
 F0 "LED" 0 100 50 H V C CNN
-F1 "LED-keyboard_parts" 0 -100 50 H V C CNN
+F1 "LED-keyboard_parts-Ori-rescue" 0 -100 50 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 $FPLIST
@@ -142,61 +142,11 @@ X A 2 200 0 150 L 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Power_Protection_USBLC6-2SC6-shark-cache
+# SW_PUSH-keyboard_parts-Ori-rescue
 #
-DEF Power_Protection_USBLC6-2SC6-shark-cache U 0 0 Y Y 1 F N
-F0 "U" 200 350 50 H V C CNN
-F1 "Power_Protection_USBLC6-2SC6-shark-cache" 400 -400 50 H V C CNN
-F2 "Package_TO_SOT_SMD:SOT-23-6" -750 400 50 H I C CNN
-F3 "" 200 350 50 H I C CNN
-$FPLIST
- SOT?23*
-$ENDFPLIST
-DRAW
-C -200 0 10 0 1 0 F
-C -100 0 10 0 1 0 F
-C 0 -250 10 0 1 0 F
-C 0 250 10 0 1 0 F
-C 100 0 10 0 1 0 F
-C 200 0 10 0 1 0 F
-S -300 -300 300 300 0 1 10 f
-S -100 250 100 -250 0 1 0 N
-P 2 0 1 0 -200 -100 -300 -100 N
-P 2 0 1 0 -200 0 -200 -100 N
-P 2 0 1 0 -200 100 -300 100 N
-P 2 0 1 0 -60 -110 -140 -110 N
-P 2 0 1 0 -60 190 -140 190 N
-P 2 0 1 0 0 -300 0 -250 N
-P 2 0 1 0 0 -250 0 50 N
-P 2 0 1 0 0 50 0 250 N
-P 2 0 1 0 0 250 0 300 N
-P 2 0 1 0 60 -110 140 -110 N
-P 2 0 1 0 60 190 140 190 N
-P 2 0 1 0 200 -100 300 -100 N
-P 2 0 1 0 200 0 200 -100 N
-P 2 0 1 0 200 100 300 100 N
-P 3 0 1 0 -100 0 -200 0 -200 100 N
-P 3 0 1 0 100 0 200 0 200 100 N
-P 4 0 1 0 -140 -190 -60 -190 -100 -110 -140 -190 N
-P 4 0 1 0 -140 110 -60 110 -100 190 -140 110 N
-P 4 0 1 0 -40 -40 40 -40 0 40 -40 -40 N
-P 4 0 1 0 40 40 30 40 -40 40 -40 20 N
-P 4 0 1 0 140 -190 60 -190 100 -110 140 -190 N
-P 4 0 1 0 140 110 60 110 100 190 140 110 N
-X IO1 1 -500 -100 200 R 50 50 1 1 P
-X GND 2 0 -500 200 U 50 50 1 1 P
-X IO2 3 500 -100 200 L 50 50 1 1 P
-X IO2 4 500 100 200 L 50 50 1 1 P
-X VBUS 5 0 500 200 D 50 50 1 1 P
-X IO1 6 -500 100 200 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# SW_PUSH-keyboard_parts
-#
-DEF SW_PUSH-keyboard_parts SW 0 40 N N 1 F N
+DEF SW_PUSH-keyboard_parts-Ori-rescue SW 0 40 N N 1 F N
 F0 "SW" 150 110 50 H V C CNN
-F1 "SW_PUSH-keyboard_parts" 0 -80 50 H V C CNN
+F1 "SW_PUSH-keyboard_parts-Ori-rescue" 0 -80 50 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -207,11 +157,11 @@ X 2 2 300 0 200 L 60 60 0 1 P I
 ENDDRAW
 ENDDEF
 #
-# TYPE-C-31-M12_13-acheronSymbols
+# TYPE-C-31-M12_13-acheronSymbols-Ori-rescue
 #
-DEF TYPE-C-31-M12_13-acheronSymbols J 0 40 Y Y 1 F N
+DEF TYPE-C-31-M12_13-acheronSymbols-Ori-rescue J 0 40 Y Y 1 F N
 F0 "J" -50 1400 50 H V L CNN
-F1 "TYPE-C-31-M12_13-acheronSymbols" 400 1300 50 H V R CNN
+F1 "TYPE-C-31-M12_13-acheronSymbols-Ori-rescue" 400 1300 50 H V R CNN
 F2 "acheronConnectors:TYPE-C-31-M-12" -500 50 50 V I C CNN
 F3 "" 200 50 50 H I C CNN
 $FPLIST

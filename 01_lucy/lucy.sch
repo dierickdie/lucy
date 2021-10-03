@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:lucy-cache
 EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
@@ -25,7 +26,7 @@ F 3 "~" H 4650 6250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Ori-rescue:SW_PUSH-keyboard_parts SW1
+L lucy-rescue:SW_PUSH-keyboard_parts-Ori-rescue SW1
 U 1 1 5E1EFD9F
 P 4650 6500
 F 0 "SW1" H 4650 6650 28  0000 C CNN
@@ -208,7 +209,7 @@ F 3 "" H 4600 5700 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Ori-rescue:ATMEGA32U4-keyboard_parts U1
+L lucy-rescue:ATMEGA32U4-keyboard_parts-Ori-rescue U1
 U 1 1 5DD57CF7
 P 6350 6350
 F 0 "U1" H 6350 6300 60  0000 C CNN
@@ -357,7 +358,7 @@ $EndComp
 Text GLabel 4800 6650 0    50   Input ~ 0
 ISP_Reset
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K49
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K49
 U 1 1 5EFFAE01
 P 14300 1800
 F 0 "K49" H 14300 1800 60  0000 C CNN
@@ -368,7 +369,7 @@ F 3 "" H 14300 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D49
+L lucy-rescue:D-keyboard_parts-Ori-rescue D49
 U 1 1 5EFFAE07
 P 13950 2050
 F 0 "D49" H 13822 2000 60  0000 R CNN
@@ -384,7 +385,7 @@ Connection ~ 14650 1800
 Wire Wire Line
 	14650 1700 14650 1800
 $Comp
-L Ori-rescue:D-keyboard_parts D50
+L lucy-rescue:D-keyboard_parts-Ori-rescue D50
 U 1 1 5EFFAE34
 P 13950 2750
 F 0 "D50" H 13822 2700 60  0000 R CNN
@@ -397,7 +398,7 @@ $EndComp
 Wire Wire Line
 	14650 2500 14600 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K50
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K50
 U 1 1 5EFFAE3B
 P 14300 2500
 F 0 "K50" H 14300 2500 60  0000 C CNN
@@ -408,7 +409,7 @@ F 3 "" H 14300 2500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K51
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K51
 U 1 1 5EFFAE9B
 P 14300 3200
 F 0 "K51" H 14300 3200 60  0000 C CNN
@@ -419,7 +420,7 @@ F 3 "" H 14300 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D51
+L lucy-rescue:D-keyboard_parts-Ori-rescue D51
 U 1 1 5EFFAEA1
 P 13950 3450
 F 0 "D51" H 13822 3400 60  0000 R CNN
@@ -433,7 +434,7 @@ Wire Wire Line
 	14600 3200 14650 3200
 Connection ~ 14650 3200
 $Comp
-L Ori-rescue:D-keyboard_parts D52
+L lucy-rescue:D-keyboard_parts-Ori-rescue D52
 U 1 1 5EFFAECA
 P 13950 4150
 F 0 "D52" H 13822 4100 60  0000 R CNN
@@ -446,7 +447,7 @@ $EndComp
 Wire Wire Line
 	14650 3900 14600 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K52
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K52
 U 1 1 5EFFAED1
 P 14300 3900
 F 0 "K52" H 14300 3900 60  0000 C CNN
@@ -468,7 +469,7 @@ Wire Wire Line
 Wire Wire Line
 	2100 8000 2150 8000
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K1
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K1
 U 1 1 5DB571D1
 P 3650 1800
 F 0 "K1" H 3650 1800 60  0000 C CNN
@@ -479,7 +480,7 @@ F 3 "" H 3650 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D1
+L lucy-rescue:D-keyboard_parts-Ori-rescue D1
 U 1 1 5DB57A33
 P 3300 2050
 F 0 "D1" H 3172 2000 60  0000 R CNN
@@ -496,7 +497,7 @@ Wire Wire Line
 Wire Wire Line
 	3950 1800 4000 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K2
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K2
 U 1 1 5DB5D7A2
 P 4500 1800
 F 0 "K2" H 4500 1800 60  0000 C CNN
@@ -507,7 +508,7 @@ F 3 "" H 4500 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D2
+L lucy-rescue:D-keyboard_parts-Ori-rescue D2
 U 1 1 5DB5D7AE
 P 4150 2050
 F 0 "D2" H 4022 2000 60  0000 R CNN
@@ -524,7 +525,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 1800 4850 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K3
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K3
 U 1 1 5DB5E86D
 P 5350 1800
 F 0 "K3" H 5350 1800 60  0000 C CNN
@@ -535,7 +536,7 @@ F 3 "" H 5350 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D3
+L lucy-rescue:D-keyboard_parts-Ori-rescue D3
 U 1 1 5DB5E879
 P 5000 2050
 F 0 "D3" H 4872 2000 60  0000 R CNN
@@ -552,7 +553,7 @@ Wire Wire Line
 Wire Wire Line
 	5650 1800 5700 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K4
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K4
 U 1 1 5DB5FF2A
 P 6200 1800
 F 0 "K4" H 6200 1800 60  0000 C CNN
@@ -563,7 +564,7 @@ F 3 "" H 6200 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D4
+L lucy-rescue:D-keyboard_parts-Ori-rescue D4
 U 1 1 5DB5FF36
 P 5850 2050
 F 0 "D4" H 5722 2000 60  0000 R CNN
@@ -580,7 +581,7 @@ Wire Wire Line
 Wire Wire Line
 	6500 1800 6550 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K5
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K5
 U 1 1 5DB60CFC
 P 7050 1800
 F 0 "K5" H 7050 1800 60  0000 C CNN
@@ -591,7 +592,7 @@ F 3 "" H 7050 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D5
+L lucy-rescue:D-keyboard_parts-Ori-rescue D5
 U 1 1 5DB60D08
 P 6700 2050
 F 0 "D5" H 6572 2000 60  0000 R CNN
@@ -608,7 +609,7 @@ Wire Wire Line
 Wire Wire Line
 	7350 1800 7400 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K6
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K6
 U 1 1 5DB61FD2
 P 7900 1800
 F 0 "K6" H 7900 1800 60  0000 C CNN
@@ -619,7 +620,7 @@ F 3 "" H 7900 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D6
+L lucy-rescue:D-keyboard_parts-Ori-rescue D6
 U 1 1 5DB61FDE
 P 7550 2050
 F 0 "D6" H 7422 2000 60  0000 R CNN
@@ -636,7 +637,7 @@ Wire Wire Line
 Wire Wire Line
 	8200 1800 8250 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K7
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K7
 U 1 1 5DB62D5B
 P 8750 1800
 F 0 "K7" H 8750 1800 60  0000 C CNN
@@ -647,7 +648,7 @@ F 3 "" H 8750 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D7
+L lucy-rescue:D-keyboard_parts-Ori-rescue D7
 U 1 1 5DB62D67
 P 8400 2050
 F 0 "D7" H 8272 2000 60  0000 R CNN
@@ -664,7 +665,7 @@ Wire Wire Line
 Wire Wire Line
 	9050 1800 9100 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K8
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K8
 U 1 1 5DB647B1
 P 9600 1800
 F 0 "K8" H 9600 1800 60  0000 C CNN
@@ -675,7 +676,7 @@ F 3 "" H 9600 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D8
+L lucy-rescue:D-keyboard_parts-Ori-rescue D8
 U 1 1 5DB647BD
 P 9250 2050
 F 0 "D8" H 9122 2000 60  0000 R CNN
@@ -692,7 +693,7 @@ Wire Wire Line
 Wire Wire Line
 	9900 1800 9950 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K9
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K9
 U 1 1 5DB65E73
 P 10450 1800
 F 0 "K9" H 10450 1800 60  0000 C CNN
@@ -703,7 +704,7 @@ F 3 "" H 10450 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D9
+L lucy-rescue:D-keyboard_parts-Ori-rescue D9
 U 1 1 5DB65E7F
 P 10100 2050
 F 0 "D9" H 9972 2000 60  0000 R CNN
@@ -720,7 +721,7 @@ Wire Wire Line
 Wire Wire Line
 	10750 1800 10800 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K10
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K10
 U 1 1 5DB6785D
 P 11300 1800
 F 0 "K10" H 11300 1800 60  0000 C CNN
@@ -731,7 +732,7 @@ F 3 "" H 11300 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D10
+L lucy-rescue:D-keyboard_parts-Ori-rescue D10
 U 1 1 5DB67869
 P 10950 2050
 F 0 "D10" H 10822 2000 60  0000 R CNN
@@ -748,7 +749,7 @@ Wire Wire Line
 Wire Wire Line
 	11600 1800 11650 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K11
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K11
 U 1 1 5DB69F33
 P 12150 1800
 F 0 "K11" H 12150 1800 60  0000 C CNN
@@ -759,7 +760,7 @@ F 3 "" H 12150 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D11
+L lucy-rescue:D-keyboard_parts-Ori-rescue D11
 U 1 1 5DB69F3F
 P 11800 2050
 F 0 "D11" H 11672 2000 60  0000 R CNN
@@ -776,7 +777,7 @@ Wire Wire Line
 Wire Wire Line
 	12450 1800 12500 1800
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K12
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K12
 U 1 1 5DB6C5CE
 P 13000 1800
 F 0 "K12" H 13000 1800 60  0000 C CNN
@@ -787,7 +788,7 @@ F 3 "" H 13000 1800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D12
+L lucy-rescue:D-keyboard_parts-Ori-rescue D12
 U 1 1 5DB6C5DA
 P 12650 2050
 F 0 "D12" H 12522 2000 60  0000 R CNN
@@ -980,7 +981,7 @@ Wire Wire Line
 Wire Wire Line
 	12700 2500 12650 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D24
+L lucy-rescue:D-keyboard_parts-Ori-rescue D24
 U 1 1 5DB6C5E5
 P 12650 2750
 F 0 "D24" H 12522 2700 60  0000 R CNN
@@ -993,7 +994,7 @@ $EndComp
 Wire Wire Line
 	13350 2500 13300 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K24
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K24
 U 1 1 5DB6C5D4
 P 13000 2500
 F 0 "K24" H 13000 2500 60  0000 C CNN
@@ -1008,7 +1009,7 @@ Wire Wire Line
 Wire Wire Line
 	11850 2500 11800 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D23
+L lucy-rescue:D-keyboard_parts-Ori-rescue D23
 U 1 1 5DB69F4A
 P 11800 2750
 F 0 "D23" H 11672 2700 60  0000 R CNN
@@ -1021,7 +1022,7 @@ $EndComp
 Wire Wire Line
 	12500 2500 12450 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K23
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K23
 U 1 1 5DB69F39
 P 12150 2500
 F 0 "K23" H 12150 2500 60  0000 C CNN
@@ -1036,7 +1037,7 @@ Wire Wire Line
 Wire Wire Line
 	11000 2500 10950 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D22
+L lucy-rescue:D-keyboard_parts-Ori-rescue D22
 U 1 1 5DB67874
 P 10950 2750
 F 0 "D22" H 10822 2700 60  0000 R CNN
@@ -1049,7 +1050,7 @@ $EndComp
 Wire Wire Line
 	11650 2500 11600 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K22
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K22
 U 1 1 5DB67863
 P 11300 2500
 F 0 "K22" H 11300 2500 60  0000 C CNN
@@ -1064,7 +1065,7 @@ Wire Wire Line
 Wire Wire Line
 	10150 2500 10100 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D21
+L lucy-rescue:D-keyboard_parts-Ori-rescue D21
 U 1 1 5DB65E8A
 P 10100 2750
 F 0 "D21" H 9972 2700 60  0000 R CNN
@@ -1077,7 +1078,7 @@ $EndComp
 Wire Wire Line
 	10800 2500 10750 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K21
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K21
 U 1 1 5DB65E79
 P 10450 2500
 F 0 "K21" H 10450 2500 60  0000 C CNN
@@ -1092,7 +1093,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 2500 9250 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D20
+L lucy-rescue:D-keyboard_parts-Ori-rescue D20
 U 1 1 5DB647C8
 P 9250 2750
 F 0 "D20" H 9122 2700 60  0000 R CNN
@@ -1105,7 +1106,7 @@ $EndComp
 Wire Wire Line
 	9950 2500 9900 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K20
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K20
 U 1 1 5DB647B7
 P 9600 2500
 F 0 "K20" H 9600 2500 60  0000 C CNN
@@ -1120,7 +1121,7 @@ Wire Wire Line
 Wire Wire Line
 	8450 2500 8400 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D19
+L lucy-rescue:D-keyboard_parts-Ori-rescue D19
 U 1 1 5DB62D72
 P 8400 2750
 F 0 "D19" H 8272 2700 60  0000 R CNN
@@ -1133,7 +1134,7 @@ $EndComp
 Wire Wire Line
 	9100 2500 9050 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K19
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K19
 U 1 1 5DB62D61
 P 8750 2500
 F 0 "K19" H 8750 2500 60  0000 C CNN
@@ -1148,7 +1149,7 @@ Wire Wire Line
 Wire Wire Line
 	7600 2500 7550 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D18
+L lucy-rescue:D-keyboard_parts-Ori-rescue D18
 U 1 1 5DB61FE9
 P 7550 2750
 F 0 "D18" H 7422 2700 60  0000 R CNN
@@ -1161,7 +1162,7 @@ $EndComp
 Wire Wire Line
 	8250 2500 8200 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K18
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K18
 U 1 1 5DB61FD8
 P 7900 2500
 F 0 "K18" H 7900 2500 60  0000 C CNN
@@ -1176,7 +1177,7 @@ Wire Wire Line
 Wire Wire Line
 	6750 2500 6700 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D17
+L lucy-rescue:D-keyboard_parts-Ori-rescue D17
 U 1 1 5DB60D13
 P 6700 2750
 F 0 "D17" H 6572 2700 60  0000 R CNN
@@ -1189,7 +1190,7 @@ $EndComp
 Wire Wire Line
 	7400 2500 7350 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K17
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K17
 U 1 1 5DB60D02
 P 7050 2500
 F 0 "K17" H 7050 2500 60  0000 C CNN
@@ -1204,7 +1205,7 @@ Wire Wire Line
 Wire Wire Line
 	5900 2500 5850 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D16
+L lucy-rescue:D-keyboard_parts-Ori-rescue D16
 U 1 1 5DB5FF41
 P 5850 2750
 F 0 "D16" H 5722 2700 60  0000 R CNN
@@ -1217,7 +1218,7 @@ $EndComp
 Wire Wire Line
 	6550 2500 6500 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K16
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K16
 U 1 1 5DB5FF30
 P 6200 2500
 F 0 "K16" H 6200 2500 60  0000 C CNN
@@ -1232,7 +1233,7 @@ Wire Wire Line
 Wire Wire Line
 	5050 2500 5000 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D15
+L lucy-rescue:D-keyboard_parts-Ori-rescue D15
 U 1 1 5DB5E884
 P 5000 2750
 F 0 "D15" H 4872 2700 60  0000 R CNN
@@ -1245,7 +1246,7 @@ $EndComp
 Wire Wire Line
 	5700 2500 5650 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K15
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K15
 U 1 1 5DB5E873
 P 5350 2500
 F 0 "K15" H 5350 2500 60  0000 C CNN
@@ -1260,7 +1261,7 @@ Wire Wire Line
 Wire Wire Line
 	4200 2500 4150 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D14
+L lucy-rescue:D-keyboard_parts-Ori-rescue D14
 U 1 1 5DB5D7B9
 P 4150 2750
 F 0 "D14" H 4022 2700 60  0000 R CNN
@@ -1273,7 +1274,7 @@ $EndComp
 Wire Wire Line
 	4850 2500 4800 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K14
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K14
 U 1 1 5DB5D7A8
 P 4500 2500
 F 0 "K14" H 4500 2500 60  0000 C CNN
@@ -1288,7 +1289,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 2500 3300 2500
 $Comp
-L Ori-rescue:D-keyboard_parts D13
+L lucy-rescue:D-keyboard_parts-Ori-rescue D13
 U 1 1 5DB58BDA
 P 3300 2750
 F 0 "D13" H 3172 2700 60  0000 R CNN
@@ -1301,7 +1302,7 @@ $EndComp
 Wire Wire Line
 	4000 2500 3950 2500
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K13
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K13
 U 1 1 5DB5731A
 P 3650 2500
 F 0 "K13" H 3650 2500 60  0000 C CNN
@@ -1312,7 +1313,7 @@ F 3 "" H 3650 2500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K25
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K25
 U 1 1 5DBF7A1E
 P 3650 3200
 F 0 "K25" H 3650 3200 60  0000 C CNN
@@ -1323,7 +1324,7 @@ F 3 "" H 3650 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D25
+L lucy-rescue:D-keyboard_parts-Ori-rescue D25
 U 1 1 5DBF7A24
 P 3300 3450
 F 0 "D25" H 3172 3400 60  0000 R CNN
@@ -1340,7 +1341,7 @@ Wire Wire Line
 Wire Wire Line
 	3950 3200 4000 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K26
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K26
 U 1 1 5DBF7A2D
 P 4500 3200
 F 0 "K26" H 4500 3200 60  0000 C CNN
@@ -1351,7 +1352,7 @@ F 3 "" H 4500 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D26
+L lucy-rescue:D-keyboard_parts-Ori-rescue D26
 U 1 1 5DBF7A33
 P 4150 3450
 F 0 "D26" H 4022 3400 60  0000 R CNN
@@ -1368,7 +1369,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 3200 4850 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K27
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K27
 U 1 1 5DBF7A3C
 P 5350 3200
 F 0 "K27" H 5350 3200 60  0000 C CNN
@@ -1379,7 +1380,7 @@ F 3 "" H 5350 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D27
+L lucy-rescue:D-keyboard_parts-Ori-rescue D27
 U 1 1 5DBF7A42
 P 5000 3450
 F 0 "D27" H 4872 3400 60  0000 R CNN
@@ -1396,7 +1397,7 @@ Wire Wire Line
 Wire Wire Line
 	5650 3200 5700 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K28
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K28
 U 1 1 5DBF7A4B
 P 6200 3200
 F 0 "K28" H 6200 3200 60  0000 C CNN
@@ -1407,7 +1408,7 @@ F 3 "" H 6200 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D28
+L lucy-rescue:D-keyboard_parts-Ori-rescue D28
 U 1 1 5DBF7A51
 P 5850 3450
 F 0 "D28" H 5722 3400 60  0000 R CNN
@@ -1424,7 +1425,7 @@ Wire Wire Line
 Wire Wire Line
 	6500 3200 6550 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K29
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K29
 U 1 1 5DBF7A5A
 P 7050 3200
 F 0 "K29" H 7050 3200 60  0000 C CNN
@@ -1435,7 +1436,7 @@ F 3 "" H 7050 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D29
+L lucy-rescue:D-keyboard_parts-Ori-rescue D29
 U 1 1 5DBF7A60
 P 6700 3450
 F 0 "D29" H 6572 3400 60  0000 R CNN
@@ -1452,7 +1453,7 @@ Wire Wire Line
 Wire Wire Line
 	7350 3200 7400 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K30
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K30
 U 1 1 5DBF7A69
 P 7900 3200
 F 0 "K30" H 7900 3200 60  0000 C CNN
@@ -1463,7 +1464,7 @@ F 3 "" H 7900 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D30
+L lucy-rescue:D-keyboard_parts-Ori-rescue D30
 U 1 1 5DBF7A6F
 P 7550 3450
 F 0 "D30" H 7422 3400 60  0000 R CNN
@@ -1480,7 +1481,7 @@ Wire Wire Line
 Wire Wire Line
 	8200 3200 8250 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K31
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K31
 U 1 1 5DBF7A78
 P 8750 3200
 F 0 "K31" H 8750 3200 60  0000 C CNN
@@ -1491,7 +1492,7 @@ F 3 "" H 8750 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D31
+L lucy-rescue:D-keyboard_parts-Ori-rescue D31
 U 1 1 5DBF7A7E
 P 8400 3450
 F 0 "D31" H 8272 3400 60  0000 R CNN
@@ -1508,7 +1509,7 @@ Wire Wire Line
 Wire Wire Line
 	9050 3200 9100 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K32
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K32
 U 1 1 5DBF7A87
 P 9600 3200
 F 0 "K32" H 9600 3200 60  0000 C CNN
@@ -1519,7 +1520,7 @@ F 3 "" H 9600 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D32
+L lucy-rescue:D-keyboard_parts-Ori-rescue D32
 U 1 1 5DBF7A8D
 P 9250 3450
 F 0 "D32" H 9122 3400 60  0000 R CNN
@@ -1536,7 +1537,7 @@ Wire Wire Line
 Wire Wire Line
 	9900 3200 9950 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K33
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K33
 U 1 1 5DBF7A96
 P 10450 3200
 F 0 "K33" H 10450 3200 60  0000 C CNN
@@ -1547,7 +1548,7 @@ F 3 "" H 10450 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D33
+L lucy-rescue:D-keyboard_parts-Ori-rescue D33
 U 1 1 5DBF7A9C
 P 10100 3450
 F 0 "D33" H 9972 3400 60  0000 R CNN
@@ -1564,7 +1565,7 @@ Wire Wire Line
 Wire Wire Line
 	10750 3200 10800 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K34
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K34
 U 1 1 5DBF7AA5
 P 11300 3200
 F 0 "K34" H 11300 3200 60  0000 C CNN
@@ -1575,7 +1576,7 @@ F 3 "" H 11300 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D34
+L lucy-rescue:D-keyboard_parts-Ori-rescue D34
 U 1 1 5DBF7AAB
 P 10950 3450
 F 0 "D34" H 10822 3400 60  0000 R CNN
@@ -1592,7 +1593,7 @@ Wire Wire Line
 Wire Wire Line
 	11600 3200 11650 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K35
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K35
 U 1 1 5DBF7AB4
 P 12150 3200
 F 0 "K35" H 12150 3200 60  0000 C CNN
@@ -1603,7 +1604,7 @@ F 3 "" H 12150 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D35
+L lucy-rescue:D-keyboard_parts-Ori-rescue D35
 U 1 1 5DBF7ABA
 P 11800 3450
 F 0 "D35" H 11672 3400 60  0000 R CNN
@@ -1620,7 +1621,7 @@ Wire Wire Line
 Wire Wire Line
 	12450 3200 12500 3200
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K36
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K36
 U 1 1 5DBF7AC3
 P 13000 3200
 F 0 "K36" H 13000 3200 60  0000 C CNN
@@ -1631,7 +1632,7 @@ F 3 "" H 13000 3200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Ori-rescue:D-keyboard_parts D36
+L lucy-rescue:D-keyboard_parts-Ori-rescue D36
 U 1 1 5DBF7AC9
 P 12650 3450
 F 0 "D36" H 12522 3400 60  0000 R CNN
@@ -1800,7 +1801,7 @@ Wire Wire Line
 Wire Wire Line
 	12700 3900 12650 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D48
+L lucy-rescue:D-keyboard_parts-Ori-rescue D48
 U 1 1 5DBF7B3A
 P 12650 4150
 F 0 "D48" H 12522 4100 60  0000 R CNN
@@ -1813,7 +1814,7 @@ $EndComp
 Wire Wire Line
 	13350 3900 13300 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K48
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K48
 U 1 1 5DBF7B41
 P 13000 3900
 F 0 "K48" H 13000 3900 60  0000 C CNN
@@ -1828,7 +1829,7 @@ Wire Wire Line
 Wire Wire Line
 	11850 3900 11800 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D47
+L lucy-rescue:D-keyboard_parts-Ori-rescue D47
 U 1 1 5DBF7B49
 P 11800 4150
 F 0 "D47" H 11672 4100 60  0000 R CNN
@@ -1841,7 +1842,7 @@ $EndComp
 Wire Wire Line
 	12500 3900 12450 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K47
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K47
 U 1 1 5DBF7B50
 P 12150 3900
 F 0 "K47" H 12150 3900 60  0000 C CNN
@@ -1856,7 +1857,7 @@ Wire Wire Line
 Wire Wire Line
 	11000 3900 10950 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D46
+L lucy-rescue:D-keyboard_parts-Ori-rescue D46
 U 1 1 5DBF7B58
 P 10950 4150
 F 0 "D46" H 10822 4100 60  0000 R CNN
@@ -1869,7 +1870,7 @@ $EndComp
 Wire Wire Line
 	11650 3900 11600 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K46
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K46
 U 1 1 5DBF7B5F
 P 11300 3900
 F 0 "K46" H 11300 3900 60  0000 C CNN
@@ -1884,7 +1885,7 @@ Wire Wire Line
 Wire Wire Line
 	10150 3900 10100 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D45
+L lucy-rescue:D-keyboard_parts-Ori-rescue D45
 U 1 1 5DBF7B67
 P 10100 4150
 F 0 "D45" H 9972 4100 60  0000 R CNN
@@ -1897,7 +1898,7 @@ $EndComp
 Wire Wire Line
 	10800 3900 10750 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K45
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K45
 U 1 1 5DBF7B6E
 P 10450 3900
 F 0 "K45" H 10450 3900 60  0000 C CNN
@@ -1912,7 +1913,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 3900 9250 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D44
+L lucy-rescue:D-keyboard_parts-Ori-rescue D44
 U 1 1 5DBF7B76
 P 9250 4150
 F 0 "D44" H 9122 4100 60  0000 R CNN
@@ -1925,7 +1926,7 @@ $EndComp
 Wire Wire Line
 	9950 3900 9900 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K44
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K44
 U 1 1 5DBF7B7D
 P 9600 3900
 F 0 "K44" H 9600 3900 60  0000 C CNN
@@ -1940,7 +1941,7 @@ Wire Wire Line
 Wire Wire Line
 	8450 3900 8400 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D43
+L lucy-rescue:D-keyboard_parts-Ori-rescue D43
 U 1 1 5DBF7B85
 P 8400 4150
 F 0 "D43" H 8272 4100 60  0000 R CNN
@@ -1953,7 +1954,7 @@ $EndComp
 Wire Wire Line
 	9100 3900 9050 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K43
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K43
 U 1 1 5DBF7B8C
 P 8750 3900
 F 0 "K43" H 8750 3900 60  0000 C CNN
@@ -1968,7 +1969,7 @@ Wire Wire Line
 Wire Wire Line
 	7600 3900 7550 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D42
+L lucy-rescue:D-keyboard_parts-Ori-rescue D42
 U 1 1 5DBF7B94
 P 7550 4150
 F 0 "D42" H 7422 4100 60  0000 R CNN
@@ -1981,7 +1982,7 @@ $EndComp
 Wire Wire Line
 	8250 3900 8200 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K42
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K42
 U 1 1 5DBF7B9B
 P 7900 3900
 F 0 "K42" H 7900 3900 60  0000 C CNN
@@ -1996,7 +1997,7 @@ Wire Wire Line
 Wire Wire Line
 	6750 3900 6700 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D41
+L lucy-rescue:D-keyboard_parts-Ori-rescue D41
 U 1 1 5DBF7BA3
 P 6700 4150
 F 0 "D41" H 6572 4100 60  0000 R CNN
@@ -2009,7 +2010,7 @@ $EndComp
 Wire Wire Line
 	7400 3900 7350 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K41
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K41
 U 1 1 5DBF7BAA
 P 7050 3900
 F 0 "K41" H 7050 3900 60  0000 C CNN
@@ -2024,7 +2025,7 @@ Wire Wire Line
 Wire Wire Line
 	5900 3900 5850 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D40
+L lucy-rescue:D-keyboard_parts-Ori-rescue D40
 U 1 1 5DBF7BB2
 P 5850 4150
 F 0 "D40" H 5722 4100 60  0000 R CNN
@@ -2037,7 +2038,7 @@ $EndComp
 Wire Wire Line
 	6550 3900 6500 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K40
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K40
 U 1 1 5DBF7BB9
 P 6200 3900
 F 0 "K40" H 6200 3900 60  0000 C CNN
@@ -2052,7 +2053,7 @@ Wire Wire Line
 Wire Wire Line
 	5050 3900 5000 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D39
+L lucy-rescue:D-keyboard_parts-Ori-rescue D39
 U 1 1 5DBF7BC1
 P 5000 4150
 F 0 "D39" H 4872 4100 60  0000 R CNN
@@ -2065,7 +2066,7 @@ $EndComp
 Wire Wire Line
 	5700 3900 5650 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K39
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K39
 U 1 1 5DBF7BC8
 P 5350 3900
 F 0 "K39" H 5350 3900 60  0000 C CNN
@@ -2080,7 +2081,7 @@ Wire Wire Line
 Wire Wire Line
 	4200 3900 4150 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D38
+L lucy-rescue:D-keyboard_parts-Ori-rescue D38
 U 1 1 5DBF7BD0
 P 4150 4150
 F 0 "D38" H 4022 4100 60  0000 R CNN
@@ -2093,7 +2094,7 @@ $EndComp
 Wire Wire Line
 	4850 3900 4800 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K38
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K38
 U 1 1 5DBF7BD7
 P 4500 3900
 F 0 "K38" H 4500 3900 60  0000 C CNN
@@ -2108,7 +2109,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 3900 3300 3900
 $Comp
-L Ori-rescue:D-keyboard_parts D37
+L lucy-rescue:D-keyboard_parts-Ori-rescue D37
 U 1 1 5DBF7BDF
 P 3300 4150
 F 0 "D37" H 3172 4100 60  0000 R CNN
@@ -2121,7 +2122,7 @@ $EndComp
 Wire Wire Line
 	4000 3900 3950 3900
 $Comp
-L Ori-rescue:KEYSW-keyboard_parts K37
+L lucy-rescue:KEYSW-keyboard_parts-Ori-rescue K37
 U 1 1 5DBF7BE6
 P 3650 3900
 F 0 "K37" H 3650 3900 60  0000 C CNN
@@ -2467,7 +2468,7 @@ F 3 "" H 8650 9350 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Ori-rescue:LED-keyboard_parts LED1
+L lucy-rescue:LED-keyboard_parts-Ori-rescue LED1
 U 1 1 5F9DDB15
 P 8400 9350
 F 0 "LED1" H 8400 9152 30  0000 C CNN
@@ -2500,7 +2501,7 @@ F 3 "" H 7900 9350 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Ori-rescue:AVR-ISP-6_mod-Connector J2
+L lucy-rescue:AVR-ISP-6_mod-Connector-Ori-rescue J2
 U 1 1 5EC10E7A
 P 6650 8650
 F 0 "J2" V 6233 8700 50  0000 C CNN
@@ -2731,7 +2732,7 @@ $EndComp
 Text GLabel 5350 9200 3    50   BiDi ~ 0
 D-
 $Comp
-L Ori-rescue:TYPE-C-31-M12_13-acheronSymbols J1
+L lucy-rescue:TYPE-C-31-M12_13-acheronSymbols-Ori-rescue J1
 U 1 1 5E315A49
 P 2150 6550
 F 0 "J1" H 2000 7550 47  0000 C CNN
