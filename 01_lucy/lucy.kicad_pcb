@@ -8391,7 +8391,7 @@
   (gr_line (start 78.580295 116.28468) (end 78.580295 47.22814) (layer Edge.Cuts) (width 0.05) (tstamp 60E2038F))
   (gr_line (start 111.167865 42.179062) (end 119.813385 42.17901) (layer Edge.Cuts) (width 0.05) (tstamp 60974DA7))
   (gr_arc (start 119.813385 42.95625) (end 120.590625 42.95625) (angle -90) (layer Edge.Cuts) (width 0.05) (tstamp 60974DA1))
-  (gr_text "lucy rev. 1.1 2021.09.26" (at 111.38288 116.5) (layer F.SilkS) (tstamp 6122E37B)
+  (gr_text "lucy rev. 1.2 2021.10.03" (at 111.38288 116.5) (layer F.SilkS) (tstamp 6122E37B)
     (effects (font (size 1.25 1.25) (thickness 0.2)))
   )
   (gr_text Encoder (at 320.27947 58.34087) (layer B.SilkS) (tstamp 60E3F23B)
