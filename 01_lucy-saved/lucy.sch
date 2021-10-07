@@ -224,21 +224,21 @@ Text GLabel 5300 6800 0    50   Input ~ 0
 XTAL1
 Text GLabel 5300 6900 0    50   Input ~ 0
 XTAL2
-Text GLabel 7850 6000 2    50   Output ~ 0
+Text GLabel 7450 6000 2    50   Output ~ 0
 row1
-Text GLabel 5300 6200 0    50   Output ~ 0
+Text GLabel 7450 6900 2    50   Output ~ 0
 col1
-Text GLabel 5300 6300 0    50   Output ~ 0
+Text GLabel 5300 6400 0    50   Output ~ 0
 col2
-Text GLabel 7450 6500 2    50   Output ~ 0
+Text GLabel 5300 6200 0    50   Output ~ 0
 col10
-Text GLabel 7450 6600 2    50   Output ~ 0
-col9
-Text GLabel 7450 6700 2    50   Output ~ 0
-col8
-Text GLabel 7450 6800 2    50   Output ~ 0
-col7
 Text GLabel 5300 6100 0    50   Output ~ 0
+col9
+Text GLabel 5300 6000 0    50   Output ~ 0
+col8
+Text GLabel 5300 5300 0    50   Output ~ 0
+col7
+Text GLabel 7450 6100 2    50   Output ~ 0
 row0
 $Comp
 L power:VCC #PWR0115
@@ -251,9 +251,9 @@ F 3 "" H 7450 6300 50  0001 C CNN
 	1    7450 6300
 	0    1    1    0   
 $EndComp
-Text GLabel 7450 7100 2    50   Output ~ 0
+Text GLabel 7450 5800 2    50   Output ~ 0
 col4
-Text GLabel 7450 7000 2    50   Output ~ 0
+Text GLabel 7450 5700 2    50   Output ~ 0
 col5
 NoConn ~ 7450 5500
 Wire Wire Line
@@ -338,11 +338,11 @@ F 3 "" H 2950 6100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4750 5800 4900 5800
-Text GLabel 7450 7200 2    50   Output ~ 0
+Text GLabel 7450 5900 2    50   Output ~ 0
 col3
-Text GLabel 8250 7300 2    50   Output ~ 0
+Text GLabel 7450 7100 2    50   Output ~ 0
 row3
-Text GLabel 8250 7400 2    50   Output ~ 0
+Text GLabel 7450 7200 2    50   Output ~ 0
 row2
 $Comp
 L Device:C_Small C6
@@ -2190,11 +2190,11 @@ Text GLabel 13350 1700 1    50   Input ~ 0
 col11
 Text GLabel 14650 1700 1    50   Input ~ 0
 col12
-Text GLabel 5100 7250 0    50   Output ~ 0
+Text GLabel 5300 7200 0    50   Output ~ 0
 enc0b
-Text GLabel 5100 7350 0    50   Output ~ 0
+Text GLabel 5300 7300 0    50   Output ~ 0
 enc0a
-Text GLabel 8250 7200 2    50   Output ~ 0
+Text GLabel 7450 7000 2    50   Output ~ 0
 col0
 Text GLabel 2800 4250 0    50   Input ~ 0
 row3
@@ -2325,8 +2325,30 @@ Wire Notes Line
 	2900 8550 3850 8550
 Wire Notes Line
 	2900 9550 3850 9550
+$Comp
+L Device:C_Small C4
+U 1 1 5DFC24A4
+P 2400 9150
+F 0 "C4" H 2450 9200 30  0000 L CNN
+F 1 ".1uF" H 2450 9100 30  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2400 9150 50  0001 C CNN
+F 3 "" H 2400 9150 50  0001 C CNN
+	1    2400 9150
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	1800 9000 1800 9050
+$Comp
+L Device:C_Small C5
+U 1 1 5E08E610
+P 2600 9150
+F 0 "C5" H 2650 9200 30  0000 L CNN
+F 1 ".1uF" H 2650 9100 30  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2600 9150 50  0001 C CNN
+F 3 "" H 2600 9150 50  0001 C CNN
+	1    2600 9150
+	1    0    0    -1  
+$EndComp
 $Comp
 L Device:C_Small C3
 U 1 1 5DFA1EF6
@@ -2360,17 +2382,29 @@ F 3 "" H 1800 9150 50  0001 C CNN
 	1    1800 9150
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2600 9050 2400 9050
 Connection ~ 1800 9050
 Connection ~ 2000 9050
 Wire Wire Line
 	2000 9050 1800 9050
+Connection ~ 2200 9050
 Wire Wire Line
 	2200 9050 2000 9050
+Connection ~ 2400 9050
+Wire Wire Line
+	2400 9050 2200 9050
+Wire Wire Line
+	2600 9250 2400 9250
 Connection ~ 2000 9250
 Wire Wire Line
 	2000 9250 1800 9250
+Connection ~ 2200 9250
 Wire Wire Line
 	2200 9250 2000 9250
+Connection ~ 2400 9250
+Wire Wire Line
+	2400 9250 2200 9250
 Connection ~ 1800 9250
 Wire Wire Line
 	1800 9250 1800 9300
@@ -2509,10 +2543,10 @@ F 3 "" H 6250 8550 50  0001 C CNN
 	1    6250 8550
 	0    1    1    0   
 $EndComp
+Text GLabel 6650 9050 3    50   Input ~ 0
+col11
 Text GLabel 6750 9050 3    50   Input ~ 0
-col1
-Text GLabel 6550 9050 3    50   Input ~ 0
-row0
+col10
 $Comp
 L power:GND #PWR0101
 U 1 1 5DF767BC
@@ -2541,24 +2575,24 @@ Text GLabel 5300 5600 0    50   BiDi ~ 0
 D+
 Text GLabel 5300 5500 0    50   BiDi ~ 0
 D-
-Text GLabel 6650 9050 3    50   Input ~ 0
-col2
+Text GLabel 6550 9050 3    50   Input ~ 0
+col9
 Text GLabel 6850 9050 3    50   Input ~ 0
 ISP_Reset
 Wire Wire Line
 	14600 1100 14750 1100
-Text GLabel 7450 6000 2    50   Output ~ 0
+Text GLabel 5300 7100 0    50   Output ~ 0
 col12
 Wire Wire Line
 	14650 2500 14650 3200
 Wire Wire Line
 	14650 3200 14650 3900
-NoConn ~ 8450 6450
-NoConn ~ 8450 6650
-NoConn ~ 8450 6750
-NoConn ~ 8450 6950
-NoConn ~ 8450 6550
-NoConn ~ 8450 6850
+NoConn ~ 7450 6500
+NoConn ~ 7450 6700
+NoConn ~ 7450 6800
+NoConn ~ 5300 7400
+NoConn ~ 7450 6600
+NoConn ~ 5300 7000
 Wire Wire Line
 	14650 1800 14650 2500
 Wire Wire Line
@@ -2629,9 +2663,9 @@ Wire Wire Line
 	14800 900  14800 2250
 Text GLabel 12500 1700 1    50   Input ~ 0
 col10
-Text GLabel 7450 6100 2    50   Output ~ 0
+Text GLabel 5300 6300 0    50   Output ~ 0
 col11
-Text GLabel 7450 6900 2    50   Output ~ 0
+Text GLabel 7450 5600 2    50   Output ~ 0
 col6
 Text GLabel 5150 8750 2    50   Input ~ 0
 VBUS
@@ -2741,21 +2775,4 @@ Wire Notes Line
 	3950 8400 5800 8400
 Wire Notes Line
 	5800 8400 5800 9550
-Connection ~ 2200 9250
-Connection ~ 2200 9050
-Wire Wire Line
-	2400 9250 2200 9250
-Wire Wire Line
-	2400 9050 2200 9050
-$Comp
-L Device:C_Small C4
-U 1 1 5DFC24A4
-P 2400 9150
-F 0 "C4" H 2450 9200 30  0000 L CNN
-F 1 ".1uF" H 2450 9100 30  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2400 9150 50  0001 C CNN
-F 3 "" H 2400 9150 50  0001 C CNN
-	1    2400 9150
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
