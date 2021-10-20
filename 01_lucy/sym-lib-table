@@ -13,4 +13,5 @@
   (lib (name therick64BA-rescue)(type Legacy)(uri ${KIPRJMOD}/therick64BA-rescue.lib)(options "")(descr ""))
   (lib (name Ori-rescue)(type Legacy)(uri ${KIPRJMOD}/Ori-rescue.lib)(options "")(descr ""))
   (lib (name lucy-rescue)(type Legacy)(uri ${KIPRJMOD}/lucy-rescue.lib)(options "")(descr ""))
+  (lib (name pcb-rescue)(type Legacy)(uri ${KIPRJMOD}/pcb-rescue.lib)(options "")(descr ""))
 )

@@ -150,11 +150,11 @@ X VCC 4 350 -150 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_ATMEGA32U4-keyboard_parts-Ori-rescue
+# pcb-rescue_ATMEGA32U4-keyboard_parts-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_ATMEGA32U4-keyboard_parts-Ori-rescue U 0 40 Y Y 1 F N
+DEF pcb-rescue_ATMEGA32U4-keyboard_parts-Ori-rescue-lucy-rescue U 0 40 Y Y 1 F N
 F0 "U" 0 -1250 60 H V C CNN
-F1 "lucy-rescue_ATMEGA32U4-keyboard_parts-Ori-rescue" 0 1250 60 H V C CNN
+F1 "pcb-rescue_ATMEGA32U4-keyboard_parts-Ori-rescue-lucy-rescue" 0 1250 60 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -206,11 +206,11 @@ X PB1/SCK 9 -1050 250 300 R 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_AVR-ISP-6_mod-Connector-Ori-rescue
+# pcb-rescue_AVR-ISP-6_mod-Connector-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_AVR-ISP-6_mod-Connector-Ori-rescue J 0 40 Y Y 1 F N
+DEF pcb-rescue_AVR-ISP-6_mod-Connector-Ori-rescue-lucy-rescue J 0 40 Y Y 1 F N
 F0 "J" 0 400 50 H V L CNN
-F1 "lucy-rescue_AVR-ISP-6_mod-Connector-Ori-rescue" 0 -300 50 H V L CNN
+F1 "pcb-rescue_AVR-ISP-6_mod-Connector-Ori-rescue-lucy-rescue" 0 -300 50 H V L CNN
 F2 "" -250 50 50 V I C CNN
 F3 "" -1275 -550 50 H I C CNN
 $FPLIST
@@ -234,11 +234,11 @@ X GND 6 -100 -400 150 U 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_D-keyboard_parts-Ori-rescue
+# pcb-rescue_D-keyboard_parts-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_D-keyboard_parts-Ori-rescue D 0 40 Y Y 1 F N
+DEF pcb-rescue_D-keyboard_parts-Ori-rescue-lucy-rescue D 0 40 Y Y 1 F N
 F0 "D" -150 -50 60 V V C CNN
-F1 "lucy-rescue_D-keyboard_parts-Ori-rescue" 150 -50 60 V I C CNN
+F1 "pcb-rescue_D-keyboard_parts-Ori-rescue-lucy-rescue" 150 -50 60 V I C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -249,11 +249,11 @@ X ~ 2 0 -150 50 U 60 60 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_KEYSW-keyboard_parts-Ori-rescue
+# pcb-rescue_KEYSW-keyboard_parts-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_KEYSW-keyboard_parts-Ori-rescue K? 0 40 Y Y 1 F N
+DEF pcb-rescue_KEYSW-keyboard_parts-Ori-rescue-lucy-rescue K? 0 40 Y Y 1 F N
 F0 "K?" -50 0 60 H V C CNN
-F1 "lucy-rescue_KEYSW-keyboard_parts-Ori-rescue" 0 -100 60 H I C CNN
+F1 "pcb-rescue_KEYSW-keyboard_parts-Ori-rescue-lucy-rescue" 0 -100 60 H I C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -265,11 +265,11 @@ X ~ 2 -300 0 50 R 60 60 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_LED-keyboard_parts-Ori-rescue
+# pcb-rescue_LED-keyboard_parts-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_LED-keyboard_parts-Ori-rescue LED 0 40 Y N 1 F N
+DEF pcb-rescue_LED-keyboard_parts-Ori-rescue-lucy-rescue LED 0 40 Y N 1 F N
 F0 "LED" 0 100 50 H V C CNN
-F1 "lucy-rescue_LED-keyboard_parts-Ori-rescue" 0 -100 50 H V C CNN
+F1 "pcb-rescue_LED-keyboard_parts-Ori-rescue-lucy-rescue" 0 -100 50 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 $FPLIST
@@ -291,11 +291,11 @@ X A 2 200 0 150 L 40 40 1 1 P
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_SW_PUSH-keyboard_parts-Ori-rescue
+# pcb-rescue_SW_PUSH-keyboard_parts-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_SW_PUSH-keyboard_parts-Ori-rescue SW 0 40 N N 1 F N
+DEF pcb-rescue_SW_PUSH-keyboard_parts-Ori-rescue-lucy-rescue SW 0 40 N N 1 F N
 F0 "SW" 150 110 50 H V C CNN
-F1 "lucy-rescue_SW_PUSH-keyboard_parts-Ori-rescue" 0 -80 50 H V C CNN
+F1 "pcb-rescue_SW_PUSH-keyboard_parts-Ori-rescue-lucy-rescue" 0 -80 50 H V C CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
@@ -306,11 +306,11 @@ X 2 2 300 0 200 L 60 60 0 1 P I
 ENDDRAW
 ENDDEF
 #
-# lucy-rescue_TYPE-C-31-M12_13-acheronSymbols-Ori-rescue
+# pcb-rescue_TYPE-C-31-M12_13-acheronSymbols-Ori-rescue-lucy-rescue
 #
-DEF lucy-rescue_TYPE-C-31-M12_13-acheronSymbols-Ori-rescue J 0 40 Y Y 1 F N
+DEF pcb-rescue_TYPE-C-31-M12_13-acheronSymbols-Ori-rescue-lucy-rescue J 0 40 Y Y 1 F N
 F0 "J" -50 1400 50 H V L CNN
-F1 "lucy-rescue_TYPE-C-31-M12_13-acheronSymbols-Ori-rescue" 400 1300 50 H V R CNN
+F1 "pcb-rescue_TYPE-C-31-M12_13-acheronSymbols-Ori-rescue-lucy-rescue" 400 1300 50 H V R CNN
 F2 "acheronConnectors:TYPE-C-31-M-12" -500 50 50 V I C CNN
 F3 "" 200 50 50 H I C CNN
 $FPLIST
