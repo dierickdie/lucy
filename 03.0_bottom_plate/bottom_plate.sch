@@ -603,7 +603,7 @@ U 1 1 6120175B
 P 4450 3700
 F 0 "H12" H 4550 3746 50  0000 L CNN
 F 1 "MountingHole" H 4550 3655 50  0000 L CNN
-F 2 "random-keyboard-parts:Generic-Mounthole" H 4450 3700 50  0001 C CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 4450 3700 50  0001 C CNN
 F 3 "~" H 4450 3700 50  0001 C CNN
 	1    4450 3700
 	1    0    0    -1  

@@ -105,7 +105,6 @@
     (uvia_dia 0.5)
     (uvia_drill 0.25)
     (add_net GND)
-    (add_net "Net-(R1-Pad2)")
   )
 
   (net_class Thick ""
