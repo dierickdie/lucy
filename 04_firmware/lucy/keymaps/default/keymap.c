@@ -270,7 +270,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* FN macOS
   .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |           |    F1     |    F2     |    F3     |    F4     |    F5     |    F6     |    F7     |    F8     |    F9     |   F10     |           |  |           |
+  |           |    F1     |    F2     |    F3     |    F4     |    F5     |    F6     |    F7     |    F8     |    F9     |   F10     |    BS     |  |           |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
   |    Fn     |    GUI    |   Shift   |  Option   |    Del    |           |           |   Left    |    Down   |    Up     |   Right   |   Enter   |  |           |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
@@ -280,7 +280,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */
   [_FUNCTION] = LAYOUT_ortho_4x12x1(
-    _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     _______,       _______,
+    _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_BSPC,       _______,
     _______,    KC_LGUI,    KC_LSFT,    KC_LALT,    KC_DEL,     _______,    _______,    CTL(LEFT),  KC_DOWN,    KC_UP,      CTL(RIGHT), KC_ENT,        _______,
     _______,    TD(FIRM),   _______,    KC_VOLD,    KC_VOLU,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,       _______,
     _______,    _______,    _______,    _______,    KC_ENT,     _______,    _______,    _______,    _______,    _______,    KC_F11,     KC_F12,        _______
@@ -454,28 +454,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // macOS
     case INS_ROW: // Insert row in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "r"); // Ctrl+Alt+i, r
+        SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "r" SS_DELAY(250) "r"); // Ctrl+Alt+i, r, r
       } else { // when keycode is released
       }
       break;
 
     case DEL_ROW: // Delete row in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "d"); // Ctrl+Alt+e, d
+        SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "d" SS_DELAY(250) "d"); // Ctrl+Alt+e, d, d
       } else { // when keycode is released
       }
       break;
 
     case INS_COL: // Insert column in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "c"); // Ctrl+Alt+i, c
+        SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "c" SS_DELAY(250) "c"); // Ctrl+Alt+i, c, c
       } else { // when keycode is released
       }
       break;    
 
     case DEL_COL: // Delete column in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "e"); // Ctrl+Alt+e, e
+        SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "d" SS_DELAY(250) "e"); // Ctrl+Alt+e, e, e
       } else { // when keycode is released
       }
       break;
@@ -535,7 +535,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         break;
 
       // Raise layers
-      case 2: // macOS
+      case 3: // macOS
         if (clockwise) { // Vertical scroll
           tap_code(KC_MS_WH_DOWN);
         } else {
@@ -543,7 +543,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
         break;
 
-      case 9: // Windows
+      case 10: // Windows
         if (clockwise) { // Vertical scroll
           tap_code(KC_MS_WH_UP);
         } else {
@@ -552,7 +552,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         break;
 
       // Function layers
-      case 3: // macOS
+      case 2: // macOS
         if (clockwise) { // Horizontal scroll
           tap_code(KC_MS_WH_RIGHT);
         } else {
@@ -560,7 +560,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
         break;
 
-      case 10: // Windows
+      case 9: // Windows
         if (clockwise) { // Horizontal scroll
           tap_code(KC_MS_WH_RIGHT);
         } else {
