@@ -1,4 +1,4 @@
-20757279034465980
+20762237851675244
 Artwork
 Longboard
 
@@ -55923,6 +55923,13 @@ EC11_cutout_plated
 0
 0
 Keeb_footprints
+ICSP-Header
+Through hole straight socket strip, 1x06, 2.54mm pitch, single row
+Through hole socket strip THT 1x06 2.54mm single row
+0
+6
+6
+Keeb_footprints
 ICSP-Header-ZigZag_small_pins
 Through hole straight socket strip, 1x06, 2.54mm pitch, single row
 Through hole socket strip THT 1x06 2.54mm single row
@@ -55979,13 +55986,6 @@ MX100_slot
 0
 0
 Keeb_footprints
-MX100_slot_plated
-
-
-0
-0
-0
-Keeb_footprints
 MX100_slot_plated_2
 
 
@@ -55994,6 +55994,20 @@ MX100_slot_plated_2
 0
 Keeb_footprints
 MX150_slot_plated_2
+
+
+0
+0
+0
+Keeb_footprints
+MX200_slot_plated_horizontal
+
+
+0
+0
+0
+Keeb_footprints
+MX200_slot_plated_vertical
 
 
 0
@@ -56050,6 +56064,13 @@ MX_200_cutout_plated_2
 0
 Keeb_footprints
 MX_200_cutout_plated_2_vert
+
+
+0
+0
+0
+Keeb_footprints
+MX_200_cutout_plated_open
 
 
 0
