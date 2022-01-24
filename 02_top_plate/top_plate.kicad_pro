@@ -187,7 +187,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../05_3d_files/top_plate_2.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

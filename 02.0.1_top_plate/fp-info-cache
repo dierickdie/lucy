@@ -1,4 +1,4 @@
-21093620285009500
+21118510037004754
 Artwork
 Longboard
 
@@ -55923,6 +55923,13 @@ EC11_cutout_plated
 0
 0
 Keeb_footprints
+ICSP-Header
+Through hole straight socket strip, 1x06, 2.54mm pitch, single row
+Through hole socket strip THT 1x06 2.54mm single row
+0
+6
+6
+Keeb_footprints
 ICSP-Header-ZigZag_small_pins
 Through hole straight socket strip, 1x06, 2.54mm pitch, single row
 Through hole socket strip THT 1x06 2.54mm single row
@@ -62950,6 +62957,13 @@ Hamamatsu SiPM
 0
 2
 2
+OptoDevice
+Kingbright_KPS-3227
+3.2mmx2.7mm, light sensor, https://www.kingbright.com/attachments/file/psearch/000/00/00/KPS-3227SP1C(Ver.16).pdf
+KPS-3227 Ambient Light Photo Sensor
+0
+4
+4
 OptoDevice
 Kingbright_KPS-5130
 http://www.kingbright.com/attachments/file/psearch/000/00/00/KPS-5130PD7C(Ver.14).pdf
