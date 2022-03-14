@@ -454,28 +454,52 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // macOS
     case INS_ROW: // Insert row in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "r" SS_DELAY(250) "r"); // Ctrl+Alt+i, r, r
+        SEND_STRING(  // Ctrl+Alt+i, r, r
+          SS_LCTL(SS_LALT("irr")) 
+          //SS_DELAY(250) 
+          //"r" 
+          //SS_DELAY(250) 
+          //"r"
+        );
       } else { // when keycode is released
       }
       break;
 
     case DEL_ROW: // Delete row in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "d" SS_DELAY(250) "d"); // Ctrl+Alt+e, d, d
+        SEND_STRING(  // Ctrl+Alt+e, d, d
+          SS_LCTL(SS_LALT("edd")) 
+          //SS_DELAY(250) 
+          //"d" 
+          //SS_DELAY(250) 
+          //"d"
+        );
       } else { // when keycode is released
       }
       break;
 
     case INS_COL: // Insert column in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("i") SS_DELAY(250)) "c" SS_DELAY(250) "c"); // Ctrl+Alt+i, c, c
+        SEND_STRING(  // Ctrl+Alt+i, c, c
+          SS_LCTL(SS_LALT("icc")) 
+          //SS_DELAY(250) 
+          //"c" 
+          //SS_DELAY(250) 
+          //"c"
+        );
       } else { // when keycode is released
       }
       break;    
 
     case DEL_COL: // Delete column in Sheets
       if (record->event.pressed) { // when keycode is pressed
-        SEND_STRING(SS_LCTL(SS_LALT("e") SS_DELAY(250)) "d" SS_DELAY(250) "e"); // Ctrl+Alt+e, e, e
+        SEND_STRING(  // Ctrl+Alt+e, d, e
+          SS_LCTL(SS_LALT("ede")) 
+          //SS_DELAY(250) 
+          //"d" 
+          //SS_DELAY(250) 
+          //"e"
+        );
       } else { // when keycode is released
       }
       break;
