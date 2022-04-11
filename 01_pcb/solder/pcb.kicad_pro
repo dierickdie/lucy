@@ -408,7 +408,7 @@
       "idf": "",
       "netlist": "therick_v3.net",
       "specctra_dsn": "",
-      "step": "../../05_3d_files/pcb.step",
+      "step": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""

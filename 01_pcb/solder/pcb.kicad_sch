@@ -5976,7 +5976,7 @@
     (property "Value" ".1uF" (id 1) (at 52.07 233.68 0)
       (effects (font (size 0.762 0.762)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad" (id 2) (at 50.8 232.41 0)
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (id 2) (at 50.8 232.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (id 3) (at 50.8 232.41 0)
@@ -6329,7 +6329,7 @@
     (uuid 00000000-0000-0000-0000-00005ec10e7a)
     (property "Reference" "J2" (id 0) (at 170.18 209.1182 90))
     (property "Value" "AVR-ISP-6_mod" (id 1) (at 170.18 211.4296 90))
-    (property "Footprint" "Keeb_footprints:PIN_HEADER_1x6_OFFSET" (id 2) (at 170.18 213.36 90)
+    (property "Footprint" "Keeb_footprints:ICSP-Header" (id 2) (at 170.18 213.36 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (id 3) (at 154.94 187.325 0)
@@ -6624,19 +6624,19 @@
     (pin "4" (uuid 43238408-c14a-4969-969e-24a5cb13db84))
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 254 142.24 0) (unit 1)
+  (symbol (lib_id "Mechanical:MountingHole") (at 248.92 153.67 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid d4de041b-b58a-4daa-beee-c967a97f2743)
-    (property "Reference" "H1" (id 0) (at 256.54 140.9699 0)
+    (uuid 348b39ce-20d2-4f01-b3b8-e8bd5a2fc26e)
+    (property "Reference" "H1" (id 0) (at 251.46 152.3999 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (id 1) (at 256.54 143.5099 0)
+    (property "Value" "MountingHole" (id 1) (at 251.46 154.9399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (id 2) (at 254 142.24 0)
+    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" (id 2) (at 248.92 153.67 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (id 3) (at 254 142.24 0)
+    (property "Datasheet" "~" (id 3) (at 248.92 153.67 0)
       (effects (font (size 1.27 1.27)) hide)
     )
   )
@@ -6731,7 +6731,7 @@
       (reference "#PWR0130") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-00005df8174e"
-      (reference "C1") (unit 1) (value ".1uF") (footprint "MountingHole:MountingHole_2.2mm_M2_Pad")
+      (reference "C1") (unit 1) (value ".1uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-00005dfa1ef6"
       (reference "C2") (unit 1) (value ".1uF") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
@@ -6910,14 +6910,14 @@
     (path "/00000000-0000-0000-0000-00005dd0e250"
       (reference "F1") (unit 1) (value ".5A") (footprint "Fuse:Fuse_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
-    (path "/d4de041b-b58a-4daa-beee-c967a97f2743"
-      (reference "H1") (unit 1) (value "MountingHole") (footprint "")
+    (path "/348b39ce-20d2-4f01-b3b8-e8bd5a2fc26e"
+      (reference "H1") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad")
     )
     (path "/00000000-0000-0000-0000-00005e315a49"
       (reference "J1") (unit 1) (value "TYPE-C-31-M12_13") (footprint "Keeb_footprints:TYPE-C-31-M-12")
     )
     (path "/00000000-0000-0000-0000-00005ec10e7a"
-      (reference "J2") (unit 1) (value "AVR-ISP-6_mod") (footprint "Keeb_footprints:PIN_HEADER_1x6_OFFSET")
+      (reference "J2") (unit 1) (value "AVR-ISP-6_mod") (footprint "Keeb_footprints:ICSP-Header")
     )
     (path "/00000000-0000-0000-0000-00005db571d1"
       (reference "K1") (unit 1) (value "KEYSW") (footprint "Keeb_footprints:MX100")
