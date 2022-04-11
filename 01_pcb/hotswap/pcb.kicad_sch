@@ -6640,6 +6640,23 @@
     (pin "1" (uuid 21307c1d-5035-4fc7-9d82-a05605a2aea7))
   )
 
+  (symbol (lib_id "Mechanical:MountingHole") (at 210.82 217.17 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 1460489b-8b5f-418d-9774-df0d764bc56a)
+    (property "Reference" "H1" (id 0) (at 213.36 215.8999 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 213.36 218.4399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" (id 2) (at 210.82 217.17 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 210.82 217.17 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (symbol (lib_id "Connector_Generic:Conn_01x01") (at 129.54 187.96 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 1e98888a-427d-4a31-a7dd-97b8504ac365)
@@ -6666,23 +6683,6 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 4d05752c-1d1a-41eb-ab5f-e717fb25e149))
-  )
-
-  (symbol (lib_id "Mechanical:MountingHole") (at 209.55 220.98 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 756c57ca-b724-416e-bbc3-080fcadffb70)
-    (property "Reference" "H1" (id 0) (at 212.09 219.7099 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (id 1) (at 212.09 222.2499 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" (id 2) (at 209.55 220.98 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 209.55 220.98 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
   )
 
   (symbol (lib_id "Connector_Generic:Conn_01x01") (at 129.54 185.42 180) (unit 1)
@@ -6982,7 +6982,7 @@
     (path "/00000000-0000-0000-0000-00005dd0e250"
       (reference "F1") (unit 1) (value ".5A") (footprint "Fuse:Fuse_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
-    (path "/756c57ca-b724-416e-bbc3-080fcadffb70"
+    (path "/1460489b-8b5f-418d-9774-df0d764bc56a"
       (reference "H1") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad")
     )
     (path "/00000000-0000-0000-0000-00005e315a49"
