@@ -392,7 +392,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "../05_3d_files/lucy_plate_hs.step",
+      "step": "../04_3d_files/lucy_plate_hs.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
