@@ -6625,23 +6625,6 @@
     (pin "4" (uuid 43238408-c14a-4969-969e-24a5cb13db84))
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 254 231.14 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 1d0b899b-109f-41b0-9892-8580a3e58416)
-    (property "Reference" "H10" (id 0) (at 256.54 229.8699 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "MountingHole" (id 1) (at 256.54 232.4099 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad" (id 2) (at 254 231.14 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 254 231.14 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-  )
-
   (symbol (lib_id "Mechanical:MountingHole") (at 254 215.9 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 2f99f7f7-095b-4a23-a5fa-86badf29d5ed)
@@ -7109,9 +7092,6 @@
     )
     (path "/51aca591-1051-4cfa-9b3d-fa41d02ea89d"
       (reference "H9") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad")
-    )
-    (path "/1d0b899b-109f-41b0-9892-8580a3e58416"
-      (reference "H10") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad")
     )
     (path "/00000000-0000-0000-0000-00005e315a49"
       (reference "J1") (unit 1) (value "TYPE-C-31-M12_13") (footprint "Keeb_footprints:TYPE-C-31-M-12")

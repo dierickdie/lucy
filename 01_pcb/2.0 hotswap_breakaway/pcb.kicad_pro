@@ -50,10 +50,10 @@
       },
       "diff_pair_dimensions": [],
       "drc_exclusions": [
-        "clearance|315652725|51593950|795e68e2-c9ba-45cf-9bff-89b8fae05b5a|b9c3a8a4-6dbf-4f38-8b4c-fa9b62ab0b0a",
-        "courtyards_overlap|314532155|46393951|00000000-0000-0000-0000-000060e34dbe|a3c47af3-d98e-4613-b5fa-944943a68e53",
-        "hole_clearance|315172725|53193950|795e68e2-c9ba-45cf-9bff-89b8fae05b5a|20cf9bee-d38f-4da5-9400-f9248a1ee214",
-        "hole_clearance|325332725|53193950|8fcec304-c6b1-4655-8326-beacd0476953|359df4f9-135c-456d-af3b-736246661aff"
+        "clearance|315687529|51466658|ed0a15c8-5d80-41ee-a0a1-304f10ca0e56|902525e7-5d29-4f6e-aa2c-e42f20418277",
+        "courtyards_overlap|314670253|46393959|57984d4a-2a7b-458e-98d3-b797ac1f9848|71758df1-2784-4b97-9371-0a899dfd148a",
+        "hole_clearance|315172929|53193958|ed0a15c8-5d80-41ee-a0a1-304f10ca0e56|ecf1c73c-4d6d-465d-b778-188e21a7477b",
+        "hole_clearance|325332929|53193958|7d3ab7a7-178e-4db0-9690-f7f25e8c849c|449f2275-4a6c-4531-8426-30ec963eaf09"
       ],
       "meta": {
         "filename": "board_design_settings.json",
