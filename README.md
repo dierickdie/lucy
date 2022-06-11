@@ -1,9 +1,9 @@
-# Ori
-![alt text](https://github.com/dierickdie/ori/blob/master/01.1_non-snap-off/01_ori.png)
+# Lucy
+![alt text](https://github.com/therick0996/lucy/blob/master/01_pcb.png)
 
 An ortho 4x12 plus macro column keyboard.
 
-This is essentially a dumbed down Planck clone, plus a column.
+This is essentially a Planck clone, plus a column.
 
 **USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do, fry your computer, break anything, etc.
 
@@ -18,7 +18,7 @@ No
 No
 
 #### Does it have hotswap?
-No
+~No~ Fine
 
 #### Does it have Alps support?
 No
