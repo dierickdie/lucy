@@ -10,7 +10,7 @@
       "pads": 1.0,
       "tracks": 1.0,
       "vias": 1.0,
-      "zones": 0.6
+      "zones": 0.8399999737739563
     },
     "ratsnest_display_mode": 0,
     "selection_filter": {
@@ -62,13 +62,14 @@
       33,
       34,
       35,
-      36
+      36,
+      37
     ],
-    "visible_layers": "000ffff_80000001",
-    "zone_display_mode": 1
+    "visible_layers": "ffcffff_ffffffff",
+    "zone_display_mode": 0
   },
   "meta": {
-    "filename": "plate.kicad_prl",
+    "filename": "pcb.kicad_prl",
     "version": 3
   },
   "project": {
