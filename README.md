@@ -3,6 +3,8 @@
 
 ![alt text](https://github.com/therick0996/lucy/blob/master/02_plate_a.png)
 
+![alt text](https://github.com/therick0996/lucy/blob/master/02_plate_b.png)
+
 An ortho 4x12 plus macro column keyboard.
 
 This is essentially a Planck clone, plus a macro column.
