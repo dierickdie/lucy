@@ -1057,7 +1057,7 @@
     (property "Value" "HOLE" (id 1) (at 158.75 63.5 0)
       (effects (font (size 1.524 1.524)) (justify left))
     )
-    (property "Footprint" "Keeb_footprints:MX100_cutout" (id 2) (at 161.29 62.23 0)
+    (property "Footprint" "Keeb_footprints:EC11_cutout" (id 2) (at 161.29 62.23 0)
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "Datasheet" "" (id 3) (at 161.29 62.23 0)
@@ -1269,6 +1269,23 @@
     )
   )
 
+  (symbol (lib_id "Mechanical:MountingHole") (at 132.08 104.14 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 6ee99e3f-5741-4564-ac73-17280593745c)
+    (property "Reference" "H10" (id 0) (at 134.62 102.9716 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 134.62 105.283 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_2.2mm_M2" (id 2) (at 132.08 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 132.08 104.14 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (symbol (lib_id "component:GND") (at 153.67 90.17 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid a08525ba-978e-412d-8dac-93a6d97d6296)
@@ -1353,6 +1370,9 @@
     )
     (path "/bcc40fb8-020a-4739-8e85-82c40b31a03a"
       (reference "H9") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2")
+    )
+    (path "/6ee99e3f-5741-4564-ac73-17280593745c"
+      (reference "H10") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2")
     )
     (path "/4125bf3c-e5a4-4ba0-80cb-eef115b53706"
       (reference "H11") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_2.2mm_M2")
@@ -1523,7 +1543,7 @@
       (reference "U51") (unit 1) (value "HOLE") (footprint "Keeb_footprints:MX100_cutout")
     )
     (path "/00000000-0000-0000-0000-00005f4bc873"
-      (reference "U52") (unit 1) (value "HOLE") (footprint "Keeb_footprints:MX100_cutout")
+      (reference "U52") (unit 1) (value "HOLE") (footprint "Keeb_footprints:EC11_cutout")
     )
   )
 )
