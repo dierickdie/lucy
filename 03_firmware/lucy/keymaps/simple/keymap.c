@@ -9,7 +9,7 @@
 #define _FUNCTION     3
 
 // Readability keycodes
-#define _______		  KC_TRNS
+//#define _______		  KC_TRNS
 
 // Layer codes
   #define LOWER         MO(_LOWER) // Momentary Lower macOS layer
