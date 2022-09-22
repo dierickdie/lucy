@@ -1,2 +1,10 @@
 .DS_Store
+01_pcb/1.0 solder/pcb-backups/
+01_pcb/1.9 hotswap_no_macro/pcb-backups/
 01_pcb/2.0 hotswap_flex/pcb-backups/
+01_pcb/2.0 hotswap_flex - lefty_lucy/pcb-backups/
+02_plate/plate_a_flex/top_plate-backups/
+02_plate/plate_a_flex/plate-backups/
+02_plate/plate_a_flex/top_plate-backups/
+02_plate/plate_b_little/top_plate-backups/
+02_plate/Regular/plate-backups/
