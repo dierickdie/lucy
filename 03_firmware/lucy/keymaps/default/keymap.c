@@ -167,6 +167,9 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 // Other
   #define CTL_HOME      LCTL(KC_HOME) // Ctrl + Home
   #define GUI_HOME      LGUI(KC_HOME) // CMD + Home
+  #define CTL_RIGHT     LCTL(KC_RIGHT) // Ctrl + Right
+  #define CTL_LEFT      LCTL(KC_LEFT) // Ctrl + Left
+  #define CTL_UP        LCTL(KC_UP) // Ctrl + Up
   #define SA_BS 		    MT(MOD_LSFT | MOD_LALT, KC_BSPC)
   #define MUTE_ZOOM     LGUI(LSFT(KC_A)) // Mute Zoom
   #define CAM_ZOOM      LGUI(LSFT(KC_V)) // Toggle Zoom camera
@@ -274,7 +277,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
   |    Fn     |    GUI    |   Shift   |  Option   |    Del    |           |           |   Left    |    Down   |    Up     |   Right   |   Enter   |  |           |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
-  |           |  Firmware |           |  Vol Down |  Vol Up   |           |           |   Home    |   Pg Dn   |   Pg Up   |    End    |           |  |           |
+  |           |  Firmware |  CTL+Up   |  CTL+Left | CTL+Right |  CTL+Up   |           |   Home    |   Pg Dn   |   Pg Up   |    End    |           |  |           |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
   |           |           |           |           |   Enter   |           |           |           |           |           |   F11     |    F12    |  |           |
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -282,7 +285,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FUNCTION] = LAYOUT_ortho_4x12x1(
     _______,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_BSPC,       _______,
     _______,    KC_LGUI,    KC_LSFT,    KC_LALT,    KC_DEL,     _______,    _______,    CTL(LEFT),  KC_DOWN,    KC_UP,      CTL(RIGHT), KC_ENT,        _______,
-    _______,    TD(FIRM),   _______,    KC_VOLD,    KC_VOLU,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,       _______,
+    _______,    TD(FIRM),   CTL_UP,     CTL_LEFT,   CTL_RIGHT,  CTL_UP,     _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     _______,       _______,
     _______,    _______,    _______,    _______,    KC_ENT,     _______,    _______,    _______,    _______,    _______,    KC_F11,     KC_F12,        _______
   ),
 
