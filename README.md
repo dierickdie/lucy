@@ -28,5 +28,8 @@ No
 #### Choc support?
 No
 
+#### Encoder?
+Not anymore. Encoders are a dead meme
+
 #### Will you add any of these?
 No
