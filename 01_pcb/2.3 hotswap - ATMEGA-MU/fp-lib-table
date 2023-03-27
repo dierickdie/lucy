@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "random-keyboard-parts")(type "KiCad")(uri "${KIPRJMOD}/footprints/random-keyboard-parts.pretty")(options "")(descr ""))
+  (lib (name "acheron_Components")(type "KiCad")(uri "${KIPRJMOD}/footprints/AcheronLibrary-master/footprints/acheron_Components.pretty")(options "")(descr ""))
+  (lib (name "MX_Only")(type "KiCad")(uri "${KIPRJMOD}/footprints/MX_Alps_Hybrid-master/MX_Only.pretty")(options "")(descr ""))
+  (lib (name "acheron_Connectors")(type "KiCad")(uri "${KIPRJMOD}/footprints/AcheronLibrary-master/footprints/acheron_Connectors.pretty")(options "")(descr ""))
+)
