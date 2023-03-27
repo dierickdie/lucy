@@ -1,4 +1,4 @@
-21182094062871766
+21185564226945762
 Artwork
 Longboard
 
@@ -56651,6 +56651,13 @@ connector JST SH top entry
 6
 5
 Keeb_footprints
+L60 Outline
+
+
+0
+0
+0
+Keeb_footprints
 MX200
 
 
@@ -59366,6 +59373,13 @@ MXOnly-1.75U-Hotswap-LED
 0
 4
 4
+MX_Only
+MXOnly-1.75U-Hotswap-Stepped-Caps
+
+
+0
+2
+2
 MX_Only
 MXOnly-1.75U-NoLED
 
