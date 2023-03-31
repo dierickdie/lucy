@@ -29,5 +29,8 @@ No
 #### Encoder?
 Not anymore. Encoders are a dead meme
 
+#### Flex cuts?
+See response to encoder
+
 #### Will you add any of these?
 No
