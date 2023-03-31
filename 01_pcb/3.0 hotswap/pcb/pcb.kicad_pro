@@ -414,10 +414,10 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.199898,
-        "diff_pair_gap": 0.254,
+        "clearance": 0.1524,
+        "diff_pair_gap": 0.1524,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2032,
+        "diff_pair_width": 0.254,
         "line_style": 0,
         "microvia_diameter": 0.3048,
         "microvia_drill": 0.1016,
@@ -431,7 +431,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.199898,
+        "clearance": 0.1524,
         "diff_pair_gap": 0.254,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2032,
