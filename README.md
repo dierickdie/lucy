@@ -5,7 +5,7 @@
 
 An 4x12 ortho plus macro column keyboard.
 
-**USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do, fry your computer, break anything, etc.
+**USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do. Like fry your computer, break anything, etc.
 
 ## FAQ:
 #### Does it have MIT/2x2u/etc.? 
