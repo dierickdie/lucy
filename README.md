@@ -27,7 +27,7 @@ No
 No
 
 #### Encoder?
-Not anymore. Encoders are a dead meme
+Not anymore; they're are a dead meme
 
 #### Flex cuts?
 See response to encoder
