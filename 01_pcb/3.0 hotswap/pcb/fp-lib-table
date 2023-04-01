@@ -4,4 +4,5 @@
   (lib (name "MX_Only")(type "KiCad")(uri "${KIPRJMOD}/footprints/MX_Alps_Hybrid-master/MX_Only.pretty")(options "")(descr ""))
   (lib (name "random-keyboard-parts")(type "KiCad")(uri "${KIPRJMOD}/footprints/random-keyboard-parts.pretty")(options "")(descr ""))
   (lib (name "acheron_Connectors")(type "KiCad")(uri "${KIPRJMOD}/footprints/AcheronLibrary-master/footprints/acheron_Connectors.pretty")(options "")(descr ""))
+  (lib (name "marbastlib-various")(type "KiCad")(uri "${KIPRJMOD}/footprints/marbastlib-6-tested/marbastlib-various.pretty")(options "")(descr ""))
 )
