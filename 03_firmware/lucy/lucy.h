@@ -1,7 +1,17 @@
 
 #pragma once
 
+#ifdef KEYBOARD_lucy_rev1
+    #include "rev1.h"
+#endif
+
+#ifdef KEYBOARD_lucy_rev3
+    #include "rev3.h"
+#endif
+
 #include "quantum.h"
+
+
 
 #define ____ KC_NO
 
