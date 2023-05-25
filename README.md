@@ -1,9 +1,11 @@
 # Lucy
-![alt text](https://github.com/therick0996/lucy/blob/master/01_pcb-QFN-0603.jpg)
+![alt text](https://github.com/therick0996/lucy/blob/master/01_KLE.jpg)
 
-![alt text](https://github.com/therick0996/lucy/blob/master/01_pcb-QFP-0805.jpg)
+![alt text](https://github.com/therick0996/lucy/blob/master/03_plate.jpg)
 
-![alt text](https://github.com/therick0996/lucy/blob/master/02_plate.jpg)
+![alt text](https://github.com/therick0996/lucy/blob/master/02_pcb-QFN-0603.jpg)
+
+![alt text](https://github.com/therick0996/lucy/blob/master/2_pcb-QFP-0805.jpg)
 
 An 4x12 ortho plus macro column keyboard.
 
