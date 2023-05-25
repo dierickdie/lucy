@@ -5,7 +5,7 @@
 
 ![alt text](https://github.com/therick0996/lucy/blob/master/02_pcb-QFN-0603.jpg)
 
-![alt text](https://github.com/therick0996/lucy/blob/master/2_pcb-QFP-0805.jpg)
+![alt text](https://github.com/therick0996/lucy/blob/master/02_pcb-QFP-0805.jpg)
 
 An 4x12 ortho plus macro column keyboard.
 
