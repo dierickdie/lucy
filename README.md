@@ -7,6 +7,8 @@
 
 ![alt text](https://github.com/therick0996/lucy/blob/master/01_pcb-QFP-0805.jpg)
 
+![alt text](https://github.com/therick0996/lucy/blob/master/03_schematic.jpg)
+
 An 4x12 ortho plus macro column keyboard.
 
 **USE AT YOUR OWN RISK!!!** I am not responsible for any dumb things you do. Like fry your computer, break anything, etc.
