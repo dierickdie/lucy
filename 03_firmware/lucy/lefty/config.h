@@ -16,7 +16,7 @@
 
 //lucy
 #define MATRIX_ROW_PINS { B0, D0, C7, C6 }
-#define MATRIX_COL_PINS { B1,  B2, B3, D1, D2, D3, D5, D4, D6, D7, B4, B5, B6 }
+#define MATRIX_COL_PINS { B2, B3, D1, D2, D3, D5, D4, D6, D7, B4, B5, B6, B1 }
 
 #define UNUSED_PINS
 

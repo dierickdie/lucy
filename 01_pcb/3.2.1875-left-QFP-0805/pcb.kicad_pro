@@ -494,7 +494,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../04_3D_files/3.2.1875-lefty-pcb.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
