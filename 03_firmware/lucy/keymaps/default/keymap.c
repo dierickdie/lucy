@@ -1,5 +1,22 @@
 #include QMK_KEYBOARD_H
 
+// https://github.com/samhocevar-forks/qmk-firmware/blob/master/docs/newbs_flashing.md
+// Flash your Keyboard from the Command Line
+// This has been made pretty simple compared to what it used to be. When you are ready to compile and flash your firmware, open up your terminal window and run the build command:
+
+// make <my_keyboard>:<my_keymap>:flash
+// For example, if your keymap is named "xyverz" and you're building a keymap for a rev5 planck, you'll use this command:
+
+// make planck/rev5:xyverz:flash
+
+// DFU
+// For the DFU bootloader, when you're ready to compile and flash your firmware, open up your terminal window and run the build command:
+
+// make <my_keyboard>:<my_keymap>:dfu
+// For example, if your keymap is named "xyverz" and you're building a keymap for a rev5 planck, you'll use this command:
+
+// make planck/rev5:xyverz:dfu
+
 // Flash bootloader: avrdude -c avrisp -P /dev/cu.usbmodem123451 -p atmega32u4 -U flash:w:bootloader_atmega32u4_1_0_0.hex:i
  
 // Layers
@@ -139,8 +156,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   #define TAB_RIGHT     LGUI(LALT(KC_RIGHT))  // Tab right macOS
   
   // Windows
-  #define TAB_LEFTW     LCTL(KC_PGDN) // Tab left Windows
-  #define TAB_RIGHTW    LCTL(KC_PGUP) // Tab right Windows
+  #define TAB_LEFTW     LCTL(KC_PGUP) // Tab left Windows
+  #define TAB_RIGHTW    LCTL(KC_PGDN) // Tab right Windows
 
 // Google Sheets shortcuts
   // macOS
@@ -177,7 +194,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // macOS
 /* Base macOS
   .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |    Esc    |     Q     |     W     |     E     |     R     |     T     |     Y     |     U     |     I     |     O     |     P     |    Del    |  |   Bspc    |
+  |    Esc    |     Q     |     W     |     E     |     R     |     T     |     Y     |     U     |     I     |     O     |     P     |    BS     |  |   Bspc    |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
   |  Fn Tab   |     A     |     S     |     D     |     F     |     G     |     H     |     J     |     K     |     L     |     ;     |     '     |  |   Play    |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
@@ -305,9 +322,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Windows
 /* Base Windows
   .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
-  |    Esc    |     Q     |     W     |     E     |     R     |     T     |     Y     |     U     |     I     |     O     |     P     |    Del    |  |   Play    |
+  |    Esc    |     Q     |     W     |     E     |     R     |     T     |     Y     |     U     |     I     |     O     |     P     |    BS     |  |   Play    |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
-  |  Fn Tab   |     A     |     S     |     D     |     F     |     G     |     H     |     J     |     K     |     L     |     ;     |     '     |  |   Mute    |
+  |  Fn Tab   |     A     |     S     |     D     |     F     |     G     |     H     |     J     |     K     |     L     |     ;     |     '     |  |   Play    |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
   |   Shift   |     Z     |     X     |     C     |     V     |     B     |     N     |     M     |     ,     |     .     |     /     |   Enter   |  |  Vol Up   |
   |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
@@ -315,8 +332,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
 */
   [_BASEW] = LAYOUT_ortho_4x12x1(
-    KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,        KC_MPLY,
-    FUNW(TAB),  KC_A,       KC_S,       KC_D,       KC_F,       KC_G,       KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),     KC_MUTE,
+    KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_BSPC,       KC_DEL,
+    FUNW(TAB),  KC_A,       KC_S,       KC_D,       CTL(F),     KC_G,       KC_H,       CTL(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),     KC_MPLY,
     KC_LSFT,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),      KC_VOLU,
     KC_LCTL,    KC_LSFT,    KC_LGUI,    KC_LALT,    LWRW(BSPC), FUN2W(BSPC),FUNW(SPC),  RSEW(SPC),  KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      KC_VOLD
   ),
@@ -343,7 +360,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
       |           |           |           |           |           |           |           |           |    BS     |     /     |     *     |    Del    |  |           |
       |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
-      |   LWL0    |   Ctrl    |   Shift   |    Del    |   Del     |           |           |           |   Left    |   Down    |     Up    |   Right   |  |           |
+      |   LWL0    |   Ctrl    |   Shift   |           |   Del     |           |           |           |   Left    |   Down    |     Up    |   Right   |  |           |
       |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
       |           |           |           |           |           |           |           |           |   Home    |   Pg Dn   |   Pg Up   |    End    |  |           |
       |-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------|  |-----------|
@@ -352,7 +369,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
       [_LWL0W] = LAYOUT_ortho_4x12x1(
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_BSPC,    KC_PSLS,    KC_PAST,    KC_DEL,        _______,
-    _______,    KC_LCTL,    KC_LSFT,    KC_DEL,     KC_DEL,     _______,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      _______,
+    _______,    KC_LCTL,    KC_LSFT,    _______,    KC_DEL,     _______,    _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,        _______,
     _______,    _______,    _______,    _______,    _______,    _______,    TG(8),	    _______,    _______,    _______,    _______,    _______,       _______
       ),
