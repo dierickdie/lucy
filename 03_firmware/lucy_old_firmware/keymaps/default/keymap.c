@@ -1,14 +1,8 @@
-// Copyright 2022 QMK / James Young (@noroadsleft)
-// SPDX-License-Identifier: GPL-2.0-or-later
-
 #include QMK_KEYBOARD_H
-#include "quantum.h"
-#include "action_tapping.h"
 
-
-// qmk compile -kb lucy -km default
-// qmk flash -kb lucy -km default
-
+// https://github.com/samhocevar-forks/qmk-firmware/blob/master/docs/newbs_flashing.md
+// Flash your Keyboard from the Command Line
+// This has been made pretty simple compared to what it used to be. When you are ready to compile and flash your firmware, open up your terminal window and run the build command:
 
 // make <my_keyboard>:<my_keymap>:flash
 // For example, if your keymap is named "xyverz" and you're building a keymap for a rev5 planck, you'll use this command:
@@ -24,9 +18,7 @@
 // make planck/rev5:xyverz:dfu
 
 // Flash bootloader: avrdude -c avrisp -P /dev/cu.usbmodem123451 -p atmega32u4 -U flash:w:bootloader_atmega32u4_1_0_0.hex:i
-
-#define BOOTMAGIC_KEY_BOOTLOADER      KC_ESC  // Key for bootloader
-
+ 
 // Layers
 #define _BASE         0
 #define _LOWER        1
@@ -63,26 +55,21 @@ typedef struct {
 
 
 // Tap dance
-typedef enum {
-    TD_NONE,
-    TD_UNKNOWN,
-    TD_SINGLE_TAP,
-    TD_SINGLE_HOLD,
-    TD_DOUBLE_TAP,
-    TD_DOUBLE_HOLD,
-    TD_DOUBLE_SINGLE_TAP, // Send two single taps
-    TD_TRIPLE_TAP,
-    TD_TRIPLE_HOLD
-} td_state_t;
-
-typedef struct {
-    bool is_press_action;
-    td_state_t state;
-} td_tap_t;
+enum {
+  SINGLE_TAP =        1,
+  SINGLE_HOLD =       2,
+  DOUBLE_TAP =        3,
+  DOUBLE_HOLD =       4,
+  DOUBLE_SINGLE_TAP = 5, // Send two single taps
+  TRIPLE_TAP =        6,
+  TRIPLE_HOLD =       7
+};
 
 // Tap dance enums
 enum {
-  PIPE,
+  // Simple 
+  PIPE = 0,
+  // Complex
   EMAIL,
   SUM,
   LBKTS,
@@ -90,23 +77,33 @@ enum {
   TILDE
 };
 
-td_state_t cur_dance(tap_dance_state_t *state);
+#include "tap_dance.h"
 
 // For complex tap dances. Put it here so it can be used in any keymap
-void email_finished(tap_dance_state_t *state, void *user_data);
-void email_reset(tap_dance_state_t *state, void *user_data);
+void email_finished (qk_tap_dance_state_t *state, void *user_data);
+void email_reset (qk_tap_dance_state_t *state, void *user_data);
 
-void sum_finished(tap_dance_state_t *state, void *user_data);
-void sum_reset(tap_dance_state_t *state, void *user_data);
+void sum_finished (qk_tap_dance_state_t *state, void *user_data);
+void sum_reset (qk_tap_dance_state_t *state, void *user_data);
 
-void lbkts_finished(tap_dance_state_t *state, void *user_data);
-void lbkts_reset(tap_dance_state_t *state, void *user_data);
+void lbkts_finished (qk_tap_dance_state_t *state, void *user_data);
+void lbkts_reset (qk_tap_dance_state_t *state, void *user_data);
 
-void rbkts_finished(tap_dance_state_t *state, void *user_data);
-void rbkts_reset(tap_dance_state_t *state, void *user_data);
+void rbkts_finished (qk_tap_dance_state_t *state, void *user_data);
+void rbkts_reset (qk_tap_dance_state_t *state, void *user_data);
 
-void tilde_finished(tap_dance_state_t *state, void *user_data);
-void tilde_reset(tap_dance_state_t *state, void *user_data);
+void tilde_finished (qk_tap_dance_state_t *state, void *user_data);
+void tilde_reset (qk_tap_dance_state_t *state, void *user_data);
+
+// Tap dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [PIPE]      = ACTION_TAP_DANCE_DOUBLE(KC_BSLS, KC_PIPE),
+  [EMAIL]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, email_finished, email_reset),
+  [SUM]       = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sum_finished, sum_reset),
+  [LBKTS]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, lbkts_finished, lbkts_reset),
+  [RBKTS]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, rbkts_finished, rbkts_reset),
+  [TILDE]     = ACTION_TAP_DANCE_FN_ADVANCED(NULL, tilde_finished, tilde_reset),
+};
 
 // Readability keycodes
 #define _______		  KC_TRNS
@@ -210,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_BSPC,       KC_DEL,
     FUN(TAB),   ALT(A),     KC_S,       KC_D,       GUI(F),     KC_G,       KC_H,       GUI(J),     KC_K,       KC_L,       KC_SCLN,    SFT(QUOT),     KC_MPLY,
     KC_LSFT,    GUI(Z),     SFT(X),     KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    SFT(ENT),      KC_VOLU,
-    KC_LGUI,    KC_LSFT,    KC_LCTL,    KC_LALT,    LWR(BSPC),  FUN2(BSPC), FUN(SPC),   RSE(SPC),   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      KC_VOLD
+    KC_LGUI,    KC_LSFT,    KC_LCTRL,   KC_LALT,    LWR(BSPC),  FUN2(BSPC), FUN(SPC),   RSE(SPC),   KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,      KC_VOLD
   ),
 
 /* Lower macOS
@@ -262,10 +259,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
     */
       [_LWL1] = LAYOUT_ortho_4x12x1(
-        QK_RBT,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,       _______,
+        RESET,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,       _______,
         KC_CAPS,    GUI_HOME,   PRNTSCRC,   PRNTSCR,    _______,    _______,    _______,    _______,    KC_DLR,     KC_COMM,    KC_PERC,    _______,       _______,
         _______,    WHLSCR,     _______,    _______,    _______,    _______,    _______,    _______,    KC_EXLM,    _______,    _______,    _______,       _______,
-        TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NUM,     _______,       _______
+        TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NLCK,    _______,       _______
       ),
 
 /* Raise macOS
@@ -389,10 +386,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       '--------------------------------------------------------------------------------------------------------------------------------------------------------------'
     */
       [_LWL1W] = LAYOUT_ortho_4x12x1(
-        QK_RBT,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,       _______,
+        RESET,      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,       _______,
         _______,    CTL_HOME,   PRNTSCRW,   _______,    _______,    _______,    _______,    _______,    KC_DLR,     KC_COMM,    KC_PERC,    _______,       _______,
         KC_CAPS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EXLM,    _______,    _______,    _______,       _______,
-        TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NUM,     _______,       _______
+        TG(7),      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_NLCK,    _______,       _______
       ),
 
 /* Raise Windows
@@ -455,9 +452,300 @@ const uint16_t PROGMEM maactions[] = {
 
 };
 
-#include "macros.h"
-#include "encoder.h"
-#include "tap_dance.h"
+/* uint16_t get_tapping_term(uint16_t keycode) {
+  switch (keycode) {
+    case CTL_T(KC_A):
+ 	 return 500;
+	case SFT_T(KC_S):
+	 return 500;
+    default:
+      return TAPPING_TERM;
+  }
+} */ 
+
+/*bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {      
+        case SFT_T(KC_QUOT):
+            // Immediately select the hold action when another key is tapped.
+            return true;
+        default:
+            // Do not select the hold action when another key is tapped.
+            return false;
+    }
+}*/
+
+// Macros
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    // macOS
+    case INS_ROW: // Insert row in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(  // Ctrl+Alt+i, r, r
+          SS_LCTL(SS_LALT("irr")) 
+          //SS_DELAY(250) 
+          //"r" 
+          //SS_DELAY(250) 
+          //"r"
+        );
+      } else { // when keycode is released
+      }
+      break;
+
+    case DEL_ROW: // Delete row in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(  // Ctrl+Alt+e, d, d
+          SS_LCTL(SS_LALT("edd")) 
+          //SS_DELAY(250) 
+          //"d" 
+          //SS_DELAY(250) 
+          //"d"
+        );
+      } else { // when keycode is released
+      }
+      break;
+
+    case INS_COL: // Insert column in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(  // Ctrl+Alt+i, c, c
+          SS_LCTL(SS_LALT("icc")) 
+          //SS_DELAY(250) 
+          //"c" 
+          //SS_DELAY(250) 
+          //"c"
+        );
+      } else { // when keycode is released
+      }
+      break;    
+
+    case DEL_COL: // Delete column in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(  // Ctrl+Alt+e, d, e
+          SS_LCTL(SS_LALT("ede")) 
+          //SS_DELAY(250) 
+          //"d" 
+          //SS_DELAY(250) 
+          //"e"
+        );
+      } else { // when keycode is released
+      }
+      break;
+
+    // Windows
+    case INS_ROWW: // Insert row in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("i") SS_DELAY(250)) "r"); // Alt+Shift+i, r
+      } else { // when keycode is released
+      }
+      break;
+
+    case DEL_ROWW: // Delete row in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("e") SS_DELAY(250)) "d"); // Alt+Shift+e, d
+      } else { // when keycode is released
+      }
+      break;
+
+    case INS_COLW: // Insert column in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("i") SS_DELAY(250)) "c"); // Alt+Shift+i, c
+      } else { // when keycode is released
+      }
+      break;    
+
+    case DEL_COLW: // zDelete column in Sheets
+      if (record->event.pressed) { // when keycode is pressed
+        SEND_STRING(SS_LALT(SS_LSFT("e") SS_DELAY(250)) "e"); // Alt+Shift+e, e
+      } else { // when keycode is released
+      }
+      break;
+
+  }
+  return true;
+};
+
+// Encoder stuff
+bool encoder_update_user(uint8_t index, bool clockwise) {
+  if (index == 0) {
+    switch(biton32(layer_state)){
+      // Base layers      
+        case 0: // macOS
+          if (clockwise) { // Volume
+            tap_code(KC_VOLD);
+            //tap_code16(S(C(A(KC_DOWN))));
+          } else {
+            tap_code(KC_VOLU);
+            //tap_code16(S(C(A(KC_UP))));
+          }
+        break;
+
+      case 7: // Windows
+        if (clockwise) { // Volume
+          tap_code(KC_VOLD);
+        } else {
+          tap_code(KC_VOLU);
+        }
+        break;
+
+      // Raise layers
+      case 3: // macOS
+        if (clockwise) { // Vertical scroll
+          tap_code(KC_MS_WH_DOWN);
+        } else {
+          tap_code(KC_MS_WH_UP);
+        }
+        break;
+
+      case 10: // Windows
+        if (clockwise) { // Vertical scroll
+          tap_code(KC_MS_WH_UP);
+        } else {
+          tap_code(KC_MS_WH_DOWN);
+        }
+        break;
+
+      // Function layers
+      case 2: // macOS
+        if (clockwise) { // Horizontal scroll
+          tap_code(KC_MS_WH_RIGHT);
+        } else {
+          tap_code(KC_MS_WH_LEFT);
+        }
+        break;
+
+      case 9: // Windows
+        if (clockwise) { // Horizontal scroll
+          tap_code(KC_MS_WH_RIGHT);
+        } else {
+          tap_code(KC_MS_WH_LEFT);
+        }
+        break;
+
+    }
+  }
+  return true;
+}
+// #endif
+
+// Tap dance stuff
+static xtap email_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+static xtap sum_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+static xtap lbkts_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+static xtap rbkts_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+static xtap tilde_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+// email
+void email_finished (qk_tap_dance_state_t *state, void *user_data) {
+  email_state.state = cur_dance(state);
+  switch (email_state.state) {
+    case SINGLE_TAP: register_code(KC_LSFT); register_code(KC_2); break; //send @
+    case DOUBLE_TAP: SEND_STRING("/email"); break; // send email address
+    case TRIPLE_TAP: SEND_STRING("/workemail"); // send work email
+  }
+}
+
+void email_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (email_state.state) {
+    case SINGLE_TAP: unregister_code(KC_LSFT); unregister_code(KC_2); break; // unregister @
+    case DOUBLE_TAP: ; break;
+    case TRIPLE_TAP: ; break;
+  }
+  email_state.state = 0;
+}
+
+// Sum
+void sum_finished (qk_tap_dance_state_t *state, void *user_data) {
+  sum_state.state = cur_dance(state);
+  switch (sum_state.state) {
+    case SINGLE_TAP: register_code(KC_EQL); break; // send =
+    case DOUBLE_TAP: SEND_STRING("=sum("); break; // =sum(
+    case TRIPLE_TAP: SEND_STRING("=iferror(vlookup("); // send =iferror(vlookup(
+  }
+}
+
+void sum_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (sum_state.state) {
+    case SINGLE_TAP: unregister_code(KC_EQL); break; // unregister =
+    case DOUBLE_TAP: ; break;
+    case TRIPLE_TAP: ; break;
+  }
+  sum_state.state = 0;
+}
+
+// Left brackets 
+void lbkts_finished (qk_tap_dance_state_t *state, void *user_data) {
+  lbkts_state.state = cur_dance(state);
+  switch (lbkts_state.state) {
+    case SINGLE_TAP: register_code(KC_LSFT); register_code(KC_9); break; // send (
+    case DOUBLE_TAP: register_code(KC_LBRC); break; // send [
+    case TRIPLE_TAP: register_code(KC_LSFT); register_code(KC_LBRC); // send {
+  }
+}
+
+void lbkts_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (lbkts_state.state) {
+    case SINGLE_TAP: unregister_code(KC_LSFT); unregister_code(KC_9); break; // unregister (
+    case DOUBLE_TAP: unregister_code(KC_LBRC); break; // unregister [
+    case TRIPLE_TAP: unregister_code(KC_LSFT); unregister_code(KC_LBRC); // unregsister {
+  }
+  lbkts_state.state = 0;
+}
+
+// Right brackets
+void rbkts_finished (qk_tap_dance_state_t *state, void *user_data) {
+  rbkts_state.state = cur_dance(state);
+  switch (rbkts_state.state) {
+    case SINGLE_TAP: register_code(KC_LSFT); register_code(KC_0); break; // send )
+    case DOUBLE_TAP: register_code(KC_RBRC); break; // send ]
+    case TRIPLE_TAP: register_code(KC_LSFT); register_code(KC_RBRC); // send }
+  }
+}
+
+void rbkts_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (rbkts_state.state) {
+    case SINGLE_TAP: unregister_code(KC_LSFT); unregister_code(KC_0); break; // unregister )
+    case DOUBLE_TAP: unregister_code(KC_RBRC); break; // unregister ]
+    case TRIPLE_TAP: unregister_code(KC_LSFT); unregister_code(KC_RBRC); // unregsister }
+  }
+  rbkts_state.state = 0;
+}
+
+// Tilde
+void tilde_finished (qk_tap_dance_state_t *state, void *user_data) {
+  tilde_state.state = cur_dance(state);
+  switch (tilde_state.state) {
+    case SINGLE_TAP: register_code(KC_GRAVE); break; // send `
+    case DOUBLE_TAP: register_code(KC_LSFT); register_code(KC_GRAVE); break; // send ~
+    case TRIPLE_TAP: SEND_STRING("```"); // ```
+  }
+}
+
+void tilde_reset (qk_tap_dance_state_t *state, void *user_data) {
+  switch (tilde_state.state) {
+    case SINGLE_TAP: unregister_code(KC_GRAVE); break; // unregister `
+    case DOUBLE_TAP: unregister_code(KC_LSFT); unregister_code(KC_GRAVE); break; // unregister ~
+    case TRIPLE_TAP: ; break;
+  }
+  tilde_state.state = 0;
+}
 
 /* FN2
   .--------------------------------------------------------------------------------------------------------------------------------------------------------------.
