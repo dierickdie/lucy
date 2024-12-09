@@ -1,5 +1,3 @@
 .DS_Store
 04_3d_files/
-01_pcb/3.0_hotswap-QFP-0805/pcb-backups/
-01_pcb/shipped/3.0_hotswap-QFP-0805/pcb-backups/
-02_plate/plate/plate-backups
+pcb-backups/
